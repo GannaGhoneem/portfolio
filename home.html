@@ -625,6 +625,12 @@
       gap: 0.6rem;
       flex-wrap: wrap;
     }
+    [dir="rtl"] body{line-height:1.75}
+    [dir="rtl"] .mobile-nav a:hover{padding-left:.5rem;padding-right:1rem}
+    [dir="rtl"] .cert-item::before{left:auto;right:0}
+    [dir="rtl"] .cert-link{margin-left:0;margin-right:auto}
+    [dir="rtl"] .contact-item-flat:hover{transform:translateX(-4px)}
+    [dir="rtl"] .who-am-i-text{margin-left:0!important;margin-right:auto;text-align:right}
 
     #btt{
       position:fixed;bottom:1.75rem;right:1.75rem;width:48px;height:48px;border-radius:50%;
@@ -685,12 +691,12 @@
       <a href="#contact"      data-i18n="nav.contact">Contact</a>
     </div>
     <div class="nav-actions">
-      <button class="icon-btn" id="themeToggle" title="Toggle theme">
+      <button class="icon-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme" data-i18n-title="a11y.theme" data-i18n-aria-label="a11y.theme">
         <i class="fa-solid fa-sun" id="themeIcon"></i>
       </button>
-      <button class="icon-btn lang-btn" id="langToggle">AR</button>
+      <button class="icon-btn lang-btn" id="langToggle" aria-label="Switch to Arabic">AR</button>
       <a href="#contact" class="nav-cta" data-i18n="nav.hire">Contact Me</a>
-      <button class="ham-btn" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+      <button class="ham-btn" id="hamburger" aria-label="Open navigation menu" data-i18n-aria-label="a11y.menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </div>
 </nav>
@@ -780,7 +786,7 @@
         <div class="about-meta">
           <div class="about-meta-item"><span class="meta-icon">📍</span> <span data-i18n="about.loc">Cairo, Egypt</span></div>
           <div class="about-meta-item"><span class="meta-icon">💼</span> <span data-i18n="about.avail">Open to Work</span></div>
-          <div class="about-meta-item"><span class="meta-icon">🎓</span> <span>Cairo University · Computer and Artificial intelligence · 2025</span></div>
+          <div class="about-meta-item"><span class="meta-icon">🎓</span> <span data-i18n="about.educationMeta">Cairo University · Computer and Artificial Intelligence · 2025</span></div>
         </div>
       </div>
     </div>
@@ -791,7 +797,7 @@
 <section id="education" class="section">
   <div class="container">
     <div class="sec-label reveal" data-i18n="edu.lbl">Academic Background</div>
-    <h2 class="sec-heading reveal d1" data-i18n="edu.h">Education &amp; <span class="gradient-text">Certifications</span></h2>
+    <h2 class="sec-heading reveal d1"><span data-i18n="edu.h">Education &amp;</span> <span class="gradient-text" data-i18n="edu.certs">Certifications</span></h2>
     <p class="sec-sub reveal d2" data-i18n="edu.sub">My academic journey in technology</p>
     <div class="edu-layout">
    <div class="reveal d1">
@@ -806,10 +812,10 @@
           <div style="margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px dashed var(--border); text-align: left;">
             <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
               <i class="fa-solid fa-car-side" style="color: var(--teal);"></i>
-              <h4 style="font-family: var(--fd); font-size: 0.9rem; font-weight: 700; margin: 0;">Graduation Project: Garage EZway <span style="background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; margin-left: 0.5rem;">(A+)</span></h4>
+              <h4 style="font-family: var(--fd); font-size: 0.9rem; font-weight: 700; margin: 0;"><span data-i18n="edu.gradTitle">Graduation Project: Garage EZway</span> <span style="background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; margin-left: 0.5rem;">(A+)</span></h4>
             </div>
-            <p style="color: var(--text2); font-size: 0.85rem; margin-bottom: 0.3rem;"><strong>Department:</strong> Software Engineering</p>
-            <p style="color: var(--text2); font-size: 0.85rem; line-height: 1.6;">A comprehensive garage management system streamlining vehicle service requests, inventory tracking, appointment scheduling, and customer communication.</p>
+            <p style="color: var(--text2); font-size: 0.85rem; margin-bottom: 0.3rem;" data-i18n="edu.gradDept">Department: Software Engineering</p>
+            <p style="color: var(--text2); font-size: 0.85rem; line-height: 1.6;" data-i18n="edu.gradDesc">A comprehensive garage management system streamlining vehicle service requests, inventory tracking, appointment scheduling, and customer communication.</p>
           </div>
         </div>
       </div>
@@ -817,14 +823,14 @@
         <div class="edu-section-title"><i class="fa-solid fa-certificate"></i> <span data-i18n="edu.certs">Certifications</span></div>
         <div class="cert-list">
           <!-- الشهادات كما هي -->
-          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-code"></i></div><div class="cert-info"><h4>Internship · General Authority for Construction and Housing Cooperatives</h4><p>Front-End (HTML, CSS, JS, Bootstrap) · Aug–Sep 2024</p></div><a href="https://drive.google.com/file/d/1Za76VFxdEda6-oeMsD9gRZqHsO6k5oxS/view?usp=drive_link" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
-          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-palette"></i></div><div class="cert-info"><h4>Web Design Diploma</h4><p>Adobe PS, XD, Dreamweaver, Bootstrap · 2024</p></div><a href="https://drive.google.com/file/d/13PKKa_A3MOgALC_Fy2T1YN_D7VdMkebB/view?usp=drive_link" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
-          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-mobile-screen"></i></div><div class="cert-info"><h4>Flutter Mobile Development Diploma (120h)</h4><p>We Training and Development · Jul–Sep 2025</p></div><a href="https://drive.google.com/file/d/1cNVQondNxRkOTMf_AYfGM1sqPCaD2nzA/view?usp=drive_link" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
-          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-server"></i></div><div class="cert-info"><h4>Digital Egypt Pioneers · .NET Web Developer</h4><p>MCIT – ASP.NET Core MVC, Web API, C# · Apr–Oct 2024</p></div><a href="https://drive.google.com/file/d/1K2NjakddKLUXh_H5CfMVNzREYhGgNYFa/view?usp=sharing" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
-          <div class="cert-item"><div class="cert-icon"><i class="fa-brands fa-redhat"></i></div><div class="cert-info"><h4>Red Hat OpenShift DO188</h4><p>Containers with Podman · Jan 2025</p></div><a href="https://drive.google.com/file/d/1DDMGv5au1w4OCwNftBrJXLNf2l9AzO_n/view?usp=drive_link" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
-          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-terminal"></i></div><div class="cert-info"><h4>Red Hat System Administration I (RH124)</h4><p>Linux fundamentals · Aug 2024</p></div><a href="https://drive.google.com/file/d/1mlypcxV-xB-P8oIDNcmdNE1d_y9AcBvr/view?usp=drive_link" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
-          <div class="cert-item"><div class="cert-icon"><i class="fa-brands fa-java"></i></div><div class="cert-info"><h4>Red Hat Application Development I: Java EE (AD183)</h4><p>JAX-RS, CDI, JPA · Jun 2024</p></div><a href="https://drive.google.com/file/d/1aywtm5Tb9KKsRCPXEhzfMHVD7kpNlCo0/view?usp=drive_link" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
-          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-laptop-code"></i></div><div class="cert-info"><h4>Front‑End Development Workshop (IEEE)</h4><p>HTML5, CSS3, JavaScript, Bootstrap</p></div><a href="https://drive.google.com/file/d/1GoRqON-A9HXyF23oFSAJTrAVJgJSajrm/view?usp=drive_link" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-code"></i></div><div class="cert-info"><h4 data-i18n="edu.c1t">Internship · General Authority for Construction and Housing Cooperatives</h4><p data-i18n="edu.c1d">Front-End (HTML, CSS, JS, Bootstrap) · Aug–Sep 2024</p></div><a href="https://drive.google.com/file/d/1Za76VFxdEda6-oeMsD9gRZqHsO6k5oxS/view?usp=drive_link" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-palette"></i></div><div class="cert-info"><h4 data-i18n="edu.c2t">Web Design Diploma</h4><p data-i18n="edu.c2d">Adobe PS, XD, Dreamweaver, Bootstrap · 2024</p></div><a href="https://drive.google.com/file/d/13PKKa_A3MOgALC_Fy2T1YN_D7VdMkebB/view?usp=drive_link" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-mobile-screen"></i></div><div class="cert-info"><h4 data-i18n="edu.c3t">Flutter Mobile Development Diploma (120h)</h4><p data-i18n="edu.c3d">We Training and Development · Jul–Sep 2025</p></div><a href="https://drive.google.com/file/d/1cNVQondNxRkOTMf_AYfGM1sqPCaD2nzA/view?usp=drive_link" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-server"></i></div><div class="cert-info"><h4 data-i18n="edu.c4t">Digital Egypt Pioneers · .NET Web Developer</h4><p data-i18n="edu.c4d">MCIT – ASP.NET Core MVC, Web API, C# · Apr–Oct 2024</p></div><a href="https://drive.google.com/file/d/1K2NjakddKLUXh_H5CfMVNzREYhGgNYFa/view?usp=sharing" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+          <div class="cert-item"><div class="cert-icon"><i class="fa-brands fa-redhat"></i></div><div class="cert-info"><h4>Red Hat OpenShift DO188</h4><p data-i18n="edu.c5d">Containers with Podman · Jan 2025</p></div><a href="https://drive.google.com/file/d/1DDMGv5au1w4OCwNftBrJXLNf2l9AzO_n/view?usp=drive_link" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-terminal"></i></div><div class="cert-info"><h4>Red Hat System Administration I (RH124)</h4><p data-i18n="edu.c6d">Linux fundamentals · Aug 2024</p></div><a href="https://drive.google.com/file/d/1mlypcxV-xB-P8oIDNcmdNE1d_y9AcBvr/view?usp=drive_link" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+          <div class="cert-item"><div class="cert-icon"><i class="fa-brands fa-java"></i></div><div class="cert-info"><h4>Red Hat Application Development I: Java EE (AD183)</h4><p data-i18n="edu.c7d">JAX-RS, CDI, JPA · Jun 2024</p></div><a href="https://drive.google.com/file/d/1aywtm5Tb9KKsRCPXEhzfMHVD7kpNlCo0/view?usp=drive_link" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-laptop-code"></i></div><div class="cert-info"><h4 data-i18n="edu.c8t">Front-End Development Workshop (IEEE)</h4><p>HTML5, CSS3, JavaScript, Bootstrap</p></div><a href="https://drive.google.com/file/d/1GoRqON-A9HXyF23oFSAJTrAVJgJSajrm/view?usp=drive_link" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
         </div>
       </div>
     </div>
@@ -844,26 +850,26 @@
       <button class="skill-tab" data-panel="soft"><i class="fa-solid fa-brain"></i> <span data-i18n="sk.soft">Soft Skills</span></button>
     </div>
     <div class="skills-panel active" id="panel-backend">
-      <div class="sk-card-lg reveal"><div class="sk-card-icon">🟢</div><h4>Node.js / Express.js</h4><p>Building scalable, maintainable backend APIs and servers using Node.js and Express framework.</p></div>
-      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">🗃️</div><h4>SQL Server</h4><p>Building optimized database schemas and complex queries for efficient data storage and retrieval.</p></div>
-      <div class="sk-card-lg reveal d2"><div class="sk-card-icon">⌨️</div><h4>RESTful APIs</h4><p>Designing and implementing clean, documented RESTful APIs for web and mobile applications.</p></div>
-      <div class="sk-card-lg reveal d3"><div class="sk-card-icon">🔷</div><h4>.NET Core</h4><p>Engineering full-stack web applications using ASP.NET Core MVC and Web API with C#.</p></div>
-      <div class="sk-card-lg reveal"><div class="sk-card-icon">🍃</div><h4>MongoDB</h4><p>Schema design, aggregation pipelines, and integration with Mongoose for MERN applications.</p></div>
-      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">🔥</div><h4>Firebase</h4><p>Authentication, Cloud Firestore, and Realtime Database integration for web and mobile apps.</p></div>
+      <div class="sk-card-lg reveal"><div class="sk-card-icon">🟢</div><h4>Node.js / Express.js</h4><p data-i18n="sk.nodeDesc">Building scalable, maintainable backend APIs and servers using Node.js and Express framework.</p></div>
+      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">🗃️</div><h4>SQL Server</h4><p data-i18n="sk.sqlDesc">Building optimized database schemas and complex queries for efficient data storage and retrieval.</p></div>
+      <div class="sk-card-lg reveal d2"><div class="sk-card-icon">⌨️</div><h4>RESTful APIs</h4><p data-i18n="sk.apiDesc">Designing and implementing clean, documented RESTful APIs for web and mobile applications.</p></div>
+      <div class="sk-card-lg reveal d3"><div class="sk-card-icon">🔷</div><h4>.NET Core</h4><p data-i18n="sk.dotnetDesc">Engineering full-stack web applications using ASP.NET Core MVC and Web API with C#.</p></div>
+      <div class="sk-card-lg reveal"><div class="sk-card-icon">🍃</div><h4>MongoDB</h4><p data-i18n="sk.mongoDesc">Schema design, aggregation pipelines, and integration with Mongoose for MERN applications.</p></div>
+      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">🔥</div><h4>Firebase</h4><p data-i18n="sk.firebaseDesc">Authentication, Cloud Firestore, and Realtime Database integration for web and mobile apps.</p></div>
     </div>
     <div class="skills-panel" id="panel-frontend">
-      <div class="sk-card-lg reveal"><div class="sk-card-icon">⚛️</div><h4>React.js</h4><p>Building dynamic, component-based UIs with hooks, context, and modern React patterns.</p></div>
-      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">📱</div><h4>Flutter / Dart</h4><p>Cross-platform mobile applications with native-quality UIs for iOS and Android.</p></div>
-      <div class="sk-card-lg reveal d2"><div class="sk-card-icon">🌐</div><h4>HTML5 / CSS3</h4><p>Semantic HTML, advanced CSS animations, Flexbox, Grid, and responsive design.</p></div>
-      <div class="sk-card-lg reveal d3"><div class="sk-card-icon">📜</div><h4>JavaScript (ES6+)</h4><p>Modern JS features, async/await, DOM manipulation, and event-driven programming.</p></div>
-      <div class="sk-card-lg reveal"><div class="sk-card-icon">🎨</div><h4>Bootstrap / Tailwind</h4><p>Rapid, responsive UI development using utility-first and component-based CSS frameworks.</p></div>
-      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">✨</div><h4>CSS Animations</h4><p>Engaging micro-interactions, transitions, and keyframe animations for polished UX.</p></div>
+      <div class="sk-card-lg reveal"><div class="sk-card-icon">⚛️</div><h4>React.js</h4><p data-i18n="sk.reactDesc">Building dynamic, component-based UIs with hooks, context, and modern React patterns.</p></div>
+      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">📱</div><h4>Flutter / Dart</h4><p data-i18n="sk.flutterDesc">Cross-platform mobile applications with native-quality UIs for iOS and Android.</p></div>
+      <div class="sk-card-lg reveal d2"><div class="sk-card-icon">🌐</div><h4>HTML5 / CSS3</h4><p data-i18n="sk.htmlDesc">Semantic HTML, advanced CSS animations, Flexbox, Grid, and responsive design.</p></div>
+      <div class="sk-card-lg reveal d3"><div class="sk-card-icon">📜</div><h4>JavaScript (ES6+)</h4><p data-i18n="sk.jsDesc">Modern JavaScript features, async/await, DOM manipulation, and event-driven programming.</p></div>
+      <div class="sk-card-lg reveal"><div class="sk-card-icon">🎨</div><h4>Bootstrap / Tailwind</h4><p data-i18n="sk.cssFrameworkDesc">Rapid, responsive UI development using utility-first and component-based CSS frameworks.</p></div>
+      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">✨</div><h4>CSS Animations</h4><p data-i18n="sk.animationDesc">Engaging micro-interactions, transitions, and keyframe animations for polished UX.</p></div>
     </div>
     <div class="skills-panel" id="panel-soft">
-      <div class="sk-card-lg reveal"><div class="sk-card-icon">🔍</div><h4 data-i18n="about.soft1">Problem Solving</h4><p>Analytical thinking to break down complex problems into clean, efficient solutions.</p></div>
-      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">🤝</div><h4 data-i18n="about.soft2">Teamwork</h4><p>Collaborative approach to development with strong communication in team environments.</p></div>
-      <div class="sk-card-lg reveal d2"><div class="sk-card-icon">⏳</div><h4 data-i18n="about.soft3">Time Management</h4><p>Delivering projects on schedule with proper planning and prioritization techniques.</p></div>
-      <div class="sk-card-lg reveal d3"><div class="sk-card-icon">💬</div><h4 data-i18n="about.soft4">Communication</h4><p>Clear articulation of technical concepts to both technical and non-technical stakeholders.</p></div>
+      <div class="sk-card-lg reveal"><div class="sk-card-icon">🔍</div><h4 data-i18n="about.soft1">Problem Solving</h4><p data-i18n="sk.problemDesc">Analytical thinking to break down complex problems into clean, efficient solutions.</p></div>
+      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">🤝</div><h4 data-i18n="about.soft2">Teamwork</h4><p data-i18n="sk.teamDesc">Collaborative approach to development with strong communication in team environments.</p></div>
+      <div class="sk-card-lg reveal d2"><div class="sk-card-icon">⏳</div><h4 data-i18n="about.soft3">Time Management</h4><p data-i18n="sk.timeDesc">Delivering projects on schedule with proper planning and prioritization techniques.</p></div>
+      <div class="sk-card-lg reveal d3"><div class="sk-card-icon">💬</div><h4 data-i18n="about.soft4">Communication</h4><p data-i18n="sk.communicationDesc">Clear articulation of technical concepts to both technical and non-technical stakeholders.</p></div>
     </div>
   </div>
 </section>
@@ -876,10 +882,10 @@
     <h2 class="sec-heading reveal d1"><span class="gradient-text" data-i18n="exp.h">Work Experience</span></h2>
     <p class="sec-sub reveal d2" data-i18n="exp.sub">Building solutions and delivering value</p>
     <div class="timeline reveal d1">
-      <div class="t-item"><div class="t-dot"></div><div class="t-card"><div class="t-header"><div class="t-title-wrap"><div class="t-company-logo">DIGI</div><div><div class="t-title">MERN Stack Developer (Intern)</div><div class="t-company">Digilians · Cairo, Egypt</div></div></div><span class="t-date">Jan 2026 – Present</span></div><div class="t-cac"><div class="t-cac-item"><div><div class="t-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> Challenge</div><p class="t-cac-text">Building full‑stack web applications using React.js, Node.js, Express.js, and MongoDB; delivering projects on schedule.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> Action</div><p class="t-cac-text">Creating responsive UIs and executing RESTful APIs and CRUD operations, applying OOP principles and clean code practices.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label result"><i class="fa-solid fa-circle-check"></i> Result</div><p class="t-cac-text">Reduced backend response times by 25% and delivered maintainable, scalable applications.</p></div></div></div><div class="t-tech"><strong>Tech:</strong> React.js · Node.js · Express.js · MongoDB · Tailwind · Git</div></div></div>
-      <div class="t-item"><div class="t-dot"></div><div class="t-card"><div class="t-header"><div class="t-title-wrap"><div class="t-company-logo">WE</div><div><div class="t-title">Flutter Mobile Developer (Intern)</div><div class="t-company">We Training and Development · Cairo</div></div></div><span class="t-date">Jul 2025 – Sep 2025</span></div><div class="t-cac"><div class="t-cac-item"><div><div class="t-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> Challenge</div><p class="t-cac-text">Building a cross-platform mobile application used by 50+ test users during evaluation phase.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> Action</div><p class="t-cac-text">Integrated Firebase Authentication, Cloud Firestore, and REST APIs. Applied state management across 8 app screens.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label result"><i class="fa-solid fa-circle-check"></i> Result</div><p class="t-cac-text">Improved UI performance by 40%, reduced API response time by 30%, resolved 10+ UI/logic issues.</p></div></div></div><div class="t-tech"><strong>Tech:</strong> Flutter · Dart · Firebase · REST APIs · State Management</div></div></div>
-      <div class="t-item"><div class="t-dot"></div><div class="t-card"><div class="t-header"><div class="t-title-wrap"><div class="t-company-logo">DEPI</div><div><div class="t-title">.NET Developer (Intern)</div><div class="t-company">DEPI · Cairo, Egypt</div></div></div><span class="t-date">Apr 2024 – Oct 2024</span></div><div class="t-cac"><div class="t-cac-item"><div><div class="t-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> Challenge</div><p class="t-cac-text">Engineering full-stack web applications using ASP.NET Core MVC and .NET Core Web API.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> Action</div><p class="t-cac-text">Built backend services with C# and SQL Server, established responsive UI, and consumed RESTful APIs.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label result"><i class="fa-solid fa-circle-check"></i> Result</div><p class="t-cac-text">Delivered production-ready, clean, maintainable code. Enhanced system performance by 20%.</p></div></div></div><div class="t-tech"><strong>Tech:</strong> .NET Core MVC · C# · SQL Server · REST APIs · Git</div></div></div>
-      <div class="t-item"><div class="t-dot"></div><div class="t-card"><div class="t-header"><div class="t-title-wrap"><div class="t-company-logo">CHC</div><div><div class="t-title">Front End Developer (Intern)</div><div class="t-company">General Authority for Construction and Housing Cooperatives</div></div></div><span class="t-date">Aug 2024 – Sep 2024</span></div><div class="t-cac"><div class="t-cac-item"><div><div class="t-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> Challenge</div><p class="t-cac-text">Responsive website with modern frontend practices.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> Action</div><p class="t-cac-text">HTML, CSS, JavaScript, Bootstrap training & website build.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label result"><i class="fa-solid fa-circle-check"></i> Result</div><p class="t-cac-text">Clean, cross‑browser compatible prototype delivered on time.</p></div></div></div><div class="t-tech"><strong>Tech:</strong> HTML5 · CSS3 · JavaScript · Bootstrap</div></div></div>
+      <div class="t-item"><div class="t-dot"></div><div class="t-card"><div class="t-header"><div class="t-title-wrap"><div class="t-company-logo">DIGI</div><div><div class="t-title" data-i18n="exp.digiTitle">MERN Stack Developer (Intern)</div><div class="t-company" data-i18n="exp.digiCompany">Digilians · Cairo, Egypt</div></div></div><span class="t-date" data-i18n="exp.digiDate">Jan 2026 – Present</span></div><div class="t-cac"><div class="t-cac-item"><div><div class="t-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="proj.challenge">Challenge</span></div><p class="t-cac-text" data-i18n="exp.digiChallenge">Building full-stack web applications using React.js, Node.js, Express.js, and MongoDB; delivering projects on schedule.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="proj.action">Action</span></div><p class="t-cac-text" data-i18n="exp.digiAction">Creating responsive UIs and executing RESTful APIs and CRUD operations, applying OOP principles and clean code practices.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="proj.result">Result</span></div><p class="t-cac-text" data-i18n="exp.digiResult">Reduced backend response times by 25% and delivered maintainable, scalable applications.</p></div></div></div><div class="t-tech"><strong data-i18n="exp.tech">Tech:</strong> React.js · Node.js · Express.js · MongoDB · Tailwind · Git</div></div></div>
+      <div class="t-item"><div class="t-dot"></div><div class="t-card"><div class="t-header"><div class="t-title-wrap"><div class="t-company-logo">WE</div><div><div class="t-title" data-i18n="exp.weTitle">Flutter Mobile Developer (Intern)</div><div class="t-company" data-i18n="exp.weCompany">We Training and Development · Cairo</div></div></div><span class="t-date" data-i18n="exp.weDate">Jul 2025 – Sep 2025</span></div><div class="t-cac"><div class="t-cac-item"><div><div class="t-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="proj.challenge">Challenge</span></div><p class="t-cac-text" data-i18n="exp.weChallenge">Building a cross-platform mobile application used by 50+ test users during evaluation.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="proj.action">Action</span></div><p class="t-cac-text" data-i18n="exp.weAction">Integrated Firebase Authentication, Cloud Firestore, and REST APIs, and applied state management across 8 app screens.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="proj.result">Result</span></div><p class="t-cac-text" data-i18n="exp.weResult">Improved UI performance by 40%, reduced API response time by 30%, and resolved 10+ UI and logic issues.</p></div></div></div><div class="t-tech"><strong data-i18n="exp.tech">Tech:</strong> Flutter · Dart · Firebase · REST APIs · State Management</div></div></div>
+      <div class="t-item"><div class="t-dot"></div><div class="t-card"><div class="t-header"><div class="t-title-wrap"><div class="t-company-logo">DEPI</div><div><div class="t-title" data-i18n="exp.depiTitle">.NET Developer (Intern)</div><div class="t-company" data-i18n="exp.depiCompany">DEPI · Cairo, Egypt</div></div></div><span class="t-date" data-i18n="exp.depiDate">Apr 2024 – Oct 2024</span></div><div class="t-cac"><div class="t-cac-item"><div><div class="t-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="proj.challenge">Challenge</span></div><p class="t-cac-text" data-i18n="exp.depiChallenge">Engineering full-stack web applications using ASP.NET Core MVC and .NET Core Web API.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="proj.action">Action</span></div><p class="t-cac-text" data-i18n="exp.depiAction">Built backend services with C# and SQL Server, established responsive UIs, and consumed RESTful APIs.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="proj.result">Result</span></div><p class="t-cac-text" data-i18n="exp.depiResult">Delivered production-ready, clean, maintainable code and enhanced system performance by 20%.</p></div></div></div><div class="t-tech"><strong data-i18n="exp.tech">Tech:</strong> .NET Core MVC · C# · SQL Server · REST APIs · Git</div></div></div>
+      <div class="t-item"><div class="t-dot"></div><div class="t-card"><div class="t-header"><div class="t-title-wrap"><div class="t-company-logo">CHC</div><div><div class="t-title" data-i18n="exp.chcTitle">Front End Developer (Intern)</div><div class="t-company" data-i18n="exp.chcCompany">General Authority for Construction and Housing Cooperatives</div></div></div><span class="t-date" data-i18n="exp.chcDate">Aug 2024 – Sep 2024</span></div><div class="t-cac"><div class="t-cac-item"><div><div class="t-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="proj.challenge">Challenge</span></div><p class="t-cac-text" data-i18n="exp.chcChallenge">Building a responsive website with modern front-end practices.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="proj.action">Action</span></div><p class="t-cac-text" data-i18n="exp.chcAction">Completed HTML, CSS, JavaScript, and Bootstrap training and built a website.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="proj.result">Result</span></div><p class="t-cac-text" data-i18n="exp.chcResult">Delivered a clean, cross-browser-compatible prototype on time.</p></div></div></div><div class="t-tech"><strong data-i18n="exp.tech">Tech:</strong> HTML5 · CSS3 · JavaScript · Bootstrap</div></div></div>
     </div>
   </div>
 </section>
@@ -922,15 +928,15 @@
       <div class="proj-card reveal" data-cat="mobile">
         <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,229,200,.18),rgba(0,184,240,.12))">
           <div class="proj-visual-overlay"></div>
-           <img src="Beige New Product Mockup Now Available Facebook Post (2).png">
+           <img src="Beige New Product Mockup Now Available Facebook Post (2).png" alt="Skincare and haircare app preview" data-i18n-alt="proj.p1alt">
         </div>
         <div class="proj-body">
           <div class="proj-meta"><span class="proj-type" data-i18n="proj.mob">Mobile</span><span class="proj-year">2024</span></div>
           <h3><span data-i18n="proj.p1t">Skincare &amp; Haircare App</span></h3>
           <div class="proj-cac">
-            <div class="proj-cac-item"><div class="proj-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> Challenge</div><p>Build a Flutter e-commerce app with 20+ beauty products, admin panel, and personalized features.</p></div>
-            <div class="proj-cac-item"><div class="proj-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> Action</div><p>Integrated Firebase Firestore, CRUD admin panel, wishlist, search/filter, and 10+ responsive screens.</p></div>
-            <div class="proj-cac-item"><div class="proj-cac-label result"><i class="fa-solid fa-circle-check"></i> Result</div><p>Search/filter improves discovery by 30–40%. Production-ready cross-platform app delivered.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="proj.challenge">Challenge</span></div><p data-i18n="proj.p1challenge">Build a Flutter e-commerce app with 20+ beauty products, admin panel, and personalized features.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="proj.action">Action</span></div><p data-i18n="proj.p1action">Integrated Firebase Firestore, CRUD admin panel, wishlist, search/filter, and 10+ responsive screens.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="proj.result">Result</span></div><p data-i18n="proj.p1result">Search/filter improves discovery by 30–40%. Production-ready cross-platform app delivered.</p></div>
           </div>
           <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.75rem"><span class="svc-chip">Flutter</span><span class="svc-chip">Dart</span><span class="svc-chip">Firebase</span><span class="svc-chip">CRUD</span><span class="svc-chip">State Mgmt</span></div>
           <a href="https://drive.google.com/file/d/1_Tp50l9YZscXHHvo3_2jnKhIBEmZzdmI/view?usp=drive_link" target="_blank" class="proj-view-btn"><i class="fa-solid fa-play"></i> <span data-i18n="proj.viewBtn">View Project</span></a>
@@ -938,15 +944,15 @@
       </div>
       <div class="proj-card reveal d1" data-cat="mobile">
         <div class="proj-visual" style="background:linear-gradient(135deg,rgba(90,80,200,.18),rgba(0,184,240,.12))">
-          <img src="Beige New Product Mockup Now Available Facebook Post (1).png" alt="Garage App Mockup">
+          <img src="Beige New Product Mockup Now Available Facebook Post (1).png" alt="Garage management app preview" data-i18n-alt="proj.p2alt">
         </div>
         <div class="proj-body">
           <div class="proj-meta"><span class="proj-type" data-i18n="proj.mob">Mobile</span><span class="proj-year">2024</span></div>
           <h3><span data-i18n="proj.p2t">Garage Management App</span></h3>
           <div class="proj-cac">
-            <div class="proj-cac-item"><div class="proj-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> Challenge</div><p>Build a mobile system to manage garage services, vehicles, and customer records efficiently.</p></div>
-            <div class="proj-cac-item"><div class="proj-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> Action</div><p>Developed with Flutter and Firebase, CRUD operations, and role-based admin features.</p></div>
-            <div class="proj-cac-item"><div class="proj-cac-label result"><i class="fa-solid fa-circle-check"></i> Result</div><p>Fully functional cross-platform garage management solution with real-time data sync.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="proj.challenge">Challenge</span></div><p data-i18n="proj.p2challenge">Build a mobile system to manage garage services, vehicles, and customer records efficiently.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="proj.action">Action</span></div><p data-i18n="proj.p2action">Developed with Flutter and Firebase, CRUD operations, and role-based admin features.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="proj.result">Result</span></div><p data-i18n="proj.p2result">Fully functional cross-platform garage management solution with real-time data sync.</p></div>
           </div>
           <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.75rem"><span class="svc-chip">Flutter</span><span class="svc-chip">Dart</span><span class="svc-chip">Firebase</span><span class="svc-chip">CRUD</span></div>
           <a href="https://drive.google.com/file/d/1SU2orCe8kCyapw0MGotLMQ6oRRYoasAt/view?usp=drive_link" target="_blank" class="proj-view-btn"><i class="fa-solid fa-play"></i> <span data-i18n="proj.viewBtn">View Project</span></a>
@@ -954,15 +960,15 @@
       </div>
       <div class="proj-card reveal d2" data-cat="mobile">
         <div class="proj-visual" style="background:linear-gradient(135deg,rgba(245,166,35,.15),rgba(0,229,200,.12))">
-                <img src="Beige New Product Mockup Now Available Facebook Post.png" alt="Tennis App Mockup">
+                <img src="Beige New Product Mockup Now Available Facebook Post.png" alt="Tennis booking app preview" data-i18n-alt="proj.p3alt">
         </div>
         <div class="proj-body">
           <div class="proj-meta"><span class="proj-type" data-i18n="proj.mob">Mobile</span><span class="proj-year">2025</span></div>
           <h3><span data-i18n="proj.p3t">Tennis Booking App</span></h3>
           <div class="proj-cac">
-            <div class="proj-cac-item"><div class="proj-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> Challenge</div><p>Create a mobile app for booking tennis courts with schedule management and user profiles.</p></div>
-            <div class="proj-cac-item"><div class="proj-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> Action</div><p>Built with Flutter and Firebase, featuring booking flow, availability calendar, and state management.</p></div>
-            <div class="proj-cac-item"><div class="proj-cac-label result"><i class="fa-solid fa-circle-check"></i> Result</div><p>Delivered an intuitive, high-performance cross-platform booking experience.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="proj.challenge">Challenge</span></div><p data-i18n="proj.p3challenge">Create a mobile app for booking tennis courts with schedule management and user profiles.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="proj.action">Action</span></div><p data-i18n="proj.p3action">Built with Flutter and Firebase, featuring booking flow, availability calendar, and state management.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="proj.result">Result</span></div><p data-i18n="proj.p3result">Delivered an intuitive, high-performance cross-platform booking experience.</p></div>
           </div>
           <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.75rem"><span class="svc-chip">Flutter</span><span class="svc-chip">Firebase</span><span class="svc-chip">State Mgmt</span></div>
           <a href="https://drive.google.com/file/d/1x8xpi2lEKITCi177j_6bjqtx2sdI2dFe/view?usp=drive_link" target="_blank" class="proj-view-btn"><i class="fa-solid fa-play"></i> <span data-i18n="proj.viewBtn">View Project</span></a>
@@ -1004,7 +1010,7 @@
         <a href="https://wa.me/201033266058" target="_blank" class="contact-item-flat whatsapp"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a>
         <!-- رقم الهاتف كرابط اتصال -->
         <a href="tel:+201033266058" class="contact-item-flat"><i class="fa-solid fa-phone"></i><span>+20 103 326 6058</span></a>
-        <div class="contact-item-flat"><i class="fa-solid fa-location-dot"></i><span>Cairo, Egypt</span></div>
+        <div class="contact-item-flat"><i class="fa-solid fa-location-dot"></i><span data-i18n="about.loc">Cairo, Egypt</span></div>
       </div>
       <div class="form-card reveal-right d2">
         <h3 data-i18n="con.formTitle">Send a Message</h3>
@@ -1047,7 +1053,7 @@
   </div>
 </footer>
 
-<button id="btt"><i class="fa-solid fa-arrow-up"></i></button>
+<button id="btt" aria-label="Back to top" data-i18n-aria-label="a11y.backToTop"><i class="fa-solid fa-arrow-up"></i></button>
 
 <script>
 document.getElementById('year2').textContent = new Date().getFullYear();
@@ -1071,6 +1077,7 @@ for(let i = 0; i < 20; i++) {
 /* ── TRANSLATIONS ── */
 const T = {
   en: {
+    "page.title":"Basmala Emad | MERN Stack & Flutter Developer","a11y.theme":"Toggle theme","a11y.langToArabic":"Switch to Arabic","a11y.langToEnglish":"Switch to English","a11y.menu":"Open navigation menu","a11y.backToTop":"Back to top",
     "nav.home":"Home","nav.about":"About","nav.edu":"Education","nav.skills":"Skills",
     "nav.exp":"Experience","nav.svc":"Services","nav.proj":"Projects","nav.contact":"Contact","nav.hire":"Contact Me",
     "hero.badge":"Available for Work","hero.greet":"Hello, I'm",
@@ -1081,14 +1088,22 @@ const T = {
     "about.driven":"Full-Stack & Mobile Developer",
     "about.p1":"I am Basmala, driven by a passion for programming. I'm a Full-Stack and Mobile Developer specializing in building scalable and efficient web and mobile applications using MERN stack and Flutter, focusing on clean code, performance, and maintainable solutions.",
     "about.p2":"My journey involves building full-stack web apps, cross-platform mobile applications, and integrating Firebase, REST APIs, and modern state management patterns.",
-    "about.loc":"Cairo, Egypt","about.avail":"Open to Work",
-    "edu.lbl":"Academic Background","edu.h":"Education & Certifications","edu.sub":"My academic journey in technology",
+    "about.loc":"Cairo, Egypt","about.avail":"Open to Work","about.educationMeta":"Cairo University · Computer and Artificial Intelligence · 2025",
+    "edu.lbl":"Academic Background","edu.h":"Education &","edu.sub":"My academic journey in technology",
     "edu.title":"Education","edu.certs":"Certifications",
     "edu.d1t":"Bachelor of Computer and Artificial intelligence","edu.d1i":"Cairo University · Egypt","edu.d1p":"2021 – 2025",
+    "edu.gradTitle":"Graduation Project: Garage EZway","edu.gradDept":"Department: Software Engineering","edu.gradDesc":"A comprehensive garage management system streamlining vehicle service requests, inventory tracking, appointment scheduling, and customer communication.",
+    "edu.c1t":"Internship · General Authority for Construction and Housing Cooperatives","edu.c1d":"Front-End (HTML, CSS, JS, Bootstrap) · Aug–Sep 2024","edu.c2t":"Web Design Diploma","edu.c2d":"Adobe PS, XD, Dreamweaver, Bootstrap · 2024","edu.c3t":"Flutter Mobile Development Diploma (120h)","edu.c3d":"We Training and Development · Jul–Sep 2025","edu.c4t":"Digital Egypt Pioneers · .NET Web Developer","edu.c4d":"MCIT – ASP.NET Core MVC, Web API, C# · Apr–Oct 2024",
+    "edu.c5d":"Containers with Podman · Jan 2025","edu.c6d":"Linux fundamentals · Aug 2024","edu.c7d":"JAX-RS, CDI, JPA · Jun 2024","edu.c8t":"Front-End Development Workshop (IEEE)",
     "sk.lbl":"What I Know","sk.h":"Technical Skills","sk.sub":"My technical toolkit across web, mobile, and cloud",
     "sk.be":"Back End","sk.fe":"Front End","sk.soft":"Soft Skills",
+    "sk.nodeDesc":"Building scalable, maintainable backend APIs and servers using Node.js and Express framework.","sk.sqlDesc":"Building optimized database schemas and complex queries for efficient data storage and retrieval.","sk.apiDesc":"Designing and implementing clean, documented RESTful APIs for web and mobile applications.","sk.dotnetDesc":"Engineering full-stack web applications using ASP.NET Core MVC and Web API with C#.","sk.mongoDesc":"Schema design, aggregation pipelines, and integration with Mongoose for MERN applications.","sk.firebaseDesc":"Authentication, Cloud Firestore, and Realtime Database integration for web and mobile apps.","sk.reactDesc":"Building dynamic, component-based UIs with hooks, context, and modern React patterns.","sk.flutterDesc":"Cross-platform mobile applications with native-quality UIs for iOS and Android.","sk.htmlDesc":"Semantic HTML, advanced CSS animations, Flexbox, Grid, and responsive design.","sk.jsDesc":"Modern JavaScript features, async/await, DOM manipulation, and event-driven programming.","sk.cssFrameworkDesc":"Rapid, responsive UI development using utility-first and component-based CSS frameworks.","sk.animationDesc":"Engaging micro-interactions, transitions, and keyframe animations for polished UX.","sk.problemDesc":"Analytical thinking to break down complex problems into clean, efficient solutions.","sk.teamDesc":"Collaborative approach to development with strong communication in team environments.","sk.timeDesc":"Delivering projects on schedule with proper planning and prioritization techniques.","sk.communicationDesc":"Clear articulation of technical concepts to both technical and non-technical stakeholders.",
     "about.soft1":"Problem Solving","about.soft2":"Teamwork","about.soft3":"Time Management","about.soft4":"Communication",
     "exp.lbl":"My Journey","exp.h":"Work Experience","exp.sub":"Building solutions and delivering value",
+    "exp.tech":"Tech:","exp.digiTitle":"MERN Stack Developer (Intern)","exp.digiCompany":"Digilians · Cairo, Egypt","exp.digiDate":"Jan 2026 – Present","exp.digiChallenge":"Building full-stack web applications using React.js, Node.js, Express.js, and MongoDB; delivering projects on schedule.","exp.digiAction":"Creating responsive UIs and executing RESTful APIs and CRUD operations, applying OOP principles and clean code practices.","exp.digiResult":"Reduced backend response times by 25% and delivered maintainable, scalable applications.",
+    "exp.weTitle":"Flutter Mobile Developer (Intern)","exp.weCompany":"We Training and Development · Cairo","exp.weDate":"Jul 2025 – Sep 2025","exp.weChallenge":"Building a cross-platform mobile application used by 50+ test users during evaluation.","exp.weAction":"Integrated Firebase Authentication, Cloud Firestore, and REST APIs, and applied state management across 8 app screens.","exp.weResult":"Improved UI performance by 40%, reduced API response time by 30%, and resolved 10+ UI and logic issues.",
+    "exp.depiTitle":".NET Developer (Intern)","exp.depiCompany":"DEPI · Cairo, Egypt","exp.depiDate":"Apr 2024 – Oct 2024","exp.depiChallenge":"Engineering full-stack web applications using ASP.NET Core MVC and .NET Core Web API.","exp.depiAction":"Built backend services with C# and SQL Server, established responsive UIs, and consumed RESTful APIs.","exp.depiResult":"Delivered production-ready, clean, maintainable code and enhanced system performance by 20%.",
+    "exp.chcTitle":"Front End Developer (Intern)","exp.chcCompany":"General Authority for Construction and Housing Cooperatives","exp.chcDate":"Aug 2024 – Sep 2024","exp.chcChallenge":"Building a responsive website with modern front-end practices.","exp.chcAction":"Completed HTML, CSS, JavaScript, and Bootstrap training and built a website.","exp.chcResult":"Delivered a clean, cross-browser-compatible prototype on time.",
     "svc.lbl":"What I Offer","svc.h":"Services","svc.sub":"Comprehensive development services tailored to your needs",
     "svc.s1t":"Database Design","svc.s1p":"Efficient schemas optimized for performance and scalability.",
     "svc.s2t":"API Development","svc.s2p":"Secure and documented RESTful APIs for web & mobile apps.",
@@ -1101,6 +1116,11 @@ const T = {
     "proj.sub":"Real-world applications that showcase my skills and problem-solving approach",
     "proj.all":"All","proj.mob":"Mobile","proj.web":"Web",
     "proj.p1t":"Skincare & Haircare App","proj.p2t":"Garage Management App","proj.p3t":"Tennis Booking App",
+    "proj.challenge":"Challenge","proj.action":"Action","proj.result":"Result",
+    "proj.p1challenge":"Build a Flutter e-commerce app with 20+ beauty products, an admin panel, and personalized features.","proj.p1action":"Integrated Firebase Firestore, a CRUD admin panel, wishlist, search and filtering, and 10+ responsive screens.","proj.p1result":"Search and filtering improved discovery by 30–40%. Delivered a production-ready cross-platform app.",
+    "proj.p2challenge":"Build a mobile system to manage garage services, vehicles, and customer records efficiently.","proj.p2action":"Developed the app with Flutter and Firebase, CRUD operations, and role-based admin features.","proj.p2result":"Delivered a fully functional cross-platform garage management solution with real-time data synchronization.",
+    "proj.p3challenge":"Create a mobile app for booking tennis courts with schedule management and user profiles.","proj.p3action":"Built the app with Flutter and Firebase, including a booking flow, availability calendar, and state management.","proj.p3result":"Delivered an intuitive, high-performance cross-platform booking experience.",
+    "proj.p1alt":"Skincare and haircare app preview","proj.p2alt":"Garage management app preview","proj.p3alt":"Tennis booking app preview",
     "proj.viewBtn":"View Project",
     "test.lbl":"What People Say","test.h":"Client Testimonials",
     "test.sub":"Feedback from clients and collaborators","test.soon":"Coming Soon",
@@ -1117,6 +1137,7 @@ const T = {
     "footer.whop":"I'm a Full-Stack & Mobile Developer, passionate and dedicated to my work, building scalable applications that make your project a success.",
   },
   ar: {
+    "page.title":"بسملة عماد | مطورة MERN Stack وFlutter","a11y.theme":"تبديل المظهر","a11y.langToArabic":"التبديل إلى العربية","a11y.langToEnglish":"التبديل إلى الإنجليزية","a11y.menu":"فتح قائمة التنقل","a11y.backToTop":"العودة إلى أعلى الصفحة",
     "nav.home":"الرئيسية","nav.about":"عنّي","nav.edu":"التعليم","nav.skills":"المهارات",
     "nav.exp":"الخبرات","nav.svc":"الخدمات","nav.proj":"المشاريع","nav.contact":"تواصل","nav.hire":"تواصلي معي",
     "hero.badge":"متاحة للعمل","hero.greet":"مرحباً، أنا",
@@ -1127,14 +1148,22 @@ const T = {
     "about.driven":"مطوّرة Full-Stack وMobile",
     "about.p1":"أنا بسملة، مدفوعة بشغف البرمجة. مطوّرة Full-Stack وMobile متخصصة في بناء تطبيقات ويب وجوال قابلة للتطوير باستخدام MERN stack وFlutter.",
     "about.p2":"مسيرتي تشمل بناء تطبيقات ويب شاملة وتطبيقات جوال متعددة المنصات ودمج Firebase وREST APIs.",
-    "about.loc":"القاهرة، مصر","about.avail":"مفتوحة للعمل",
+    "about.loc":"القاهرة، مصر","about.avail":"مفتوحة للعمل","about.educationMeta":"جامعة القاهرة · الحاسبات والذكاء الاصطناعي · 2025",
     "edu.lbl":"الخلفية الأكاديمية","edu.h":"التعليم و","edu.sub":"رحلتي الأكاديمية في مجال التكنولوجيا",
     "edu.title":"التعليم","edu.certs":"الشهادات",
     "edu.d1t":"بكالوريوس علوم الحاسب والذكاء الاصطناعي","edu.d1i":"جامعة القاهرة · مصر","edu.d1p":"٢٠٢١ – ٢٠٢٥",
+    "edu.gradTitle":"مشروع التخرج: Garage EZway","edu.gradDept":"القسم: هندسة البرمجيات","edu.gradDesc":"نظام شامل لإدارة مراكز صيانة السيارات يسهّل طلبات الخدمة وتتبع المخزون وجدولة المواعيد والتواصل مع العملاء.",
+    "edu.c1t":"تدريب · الهيئة العامة لتعاونيات البناء والإسكان","edu.c1d":"واجهات أمامية (HTML وCSS وJavaScript وBootstrap) · أغسطس–سبتمبر 2024","edu.c2t":"دبلومة تصميم الويب","edu.c2d":"Adobe PS وXD وDreamweaver وBootstrap · 2024","edu.c3t":"دبلومة تطوير تطبيقات الجوال باستخدام Flutter (120 ساعة)","edu.c3d":"We للتدريب والتطوير · يوليو–سبتمبر 2025","edu.c4t":"رواد مصر الرقمية · مطورة ويب .NET","edu.c4d":"MCIT – ASP.NET Core MVC وWeb API وC# · أبريل–أكتوبر 2024",
+    "edu.c5d":"الحاويات باستخدام Podman · يناير 2025","edu.c6d":"أساسيات Linux · أغسطس 2024","edu.c7d":"JAX-RS وCDI وJPA · يونيو 2024","edu.c8t":"ورشة تطوير الواجهات الأمامية (IEEE)",
     "sk.lbl":"ما أعرفه","sk.h":"المهارات التقنية","sk.sub":"مجموعة أدواتي التقنية في الويب والجوال والسحابة",
     "sk.be":"الخلفية","sk.fe":"الواجهة الأمامية","sk.soft":"المهارات الناعمة",
+    "sk.nodeDesc":"بناء خوادم وواجهات API خلفية قابلة للتوسع وسهلة الصيانة باستخدام Node.js وExpress.js.","sk.sqlDesc":"بناء مخططات قواعد بيانات محسّنة واستعلامات معقدة لتخزين البيانات واسترجاعها بكفاءة.","sk.apiDesc":"تصميم وتنفيذ واجهات RESTful API نظيفة وموثقة لتطبيقات الويب والجوال.","sk.dotnetDesc":"تطوير تطبيقات ويب متكاملة باستخدام ASP.NET Core MVC وWeb API ولغة C#.","sk.mongoDesc":"تصميم المخططات ومسارات التجميع والتكامل مع Mongoose في تطبيقات MERN.","sk.firebaseDesc":"دمج المصادقة وCloud Firestore وRealtime Database في تطبيقات الويب والجوال.","sk.reactDesc":"بناء واجهات ديناميكية قائمة على المكونات باستخدام Hooks وContext وأنماط React الحديثة.","sk.flutterDesc":"بناء تطبيقات جوال متعددة المنصات بواجهات عالية الجودة لنظامي iOS وAndroid.","sk.htmlDesc":"استخدام HTML الدلالي وحركات CSS المتقدمة وFlexbox وGrid والتصميم المتجاوب.","sk.jsDesc":"استخدام ميزات JavaScript الحديثة وasync/await ومعالجة DOM والبرمجة المعتمدة على الأحداث.","sk.cssFrameworkDesc":"تطوير واجهات متجاوبة بسرعة باستخدام أطر CSS المعتمدة على الأدوات والمكونات.","sk.animationDesc":"إنشاء تفاعلات دقيقة وانتقالات وحركات keyframe لتجربة مستخدم مصقولة.","sk.problemDesc":"تفكير تحليلي لتقسيم المشكلات المعقدة إلى حلول نظيفة وفعالة.","sk.teamDesc":"نهج تعاوني في التطوير مع تواصل قوي داخل بيئات العمل الجماعي.","sk.timeDesc":"تسليم المشاريع في موعدها من خلال التخطيط السليم وتحديد الأولويات.","sk.communicationDesc":"شرح المفاهيم التقنية بوضوح للجمهور التقني وغير التقني.",
     "about.soft1":"حل المشكلات","about.soft2":"العمل الجماعي","about.soft3":"إدارة الوقت","about.soft4":"التواصل الفعّال",
     "exp.lbl":"مسيرتي","exp.h":"الخبرة المهنية","exp.sub":"بناء الحلول وتقديم القيمة",
+    "exp.tech":"التقنيات:","exp.digiTitle":"متدربة تطوير MERN Stack","exp.digiCompany":"Digilians · القاهرة، مصر","exp.digiDate":"يناير 2026 – حتى الآن","exp.digiChallenge":"بناء تطبيقات ويب متكاملة باستخدام React.js وNode.js وExpress.js وMongoDB مع الالتزام بمواعيد التسليم.","exp.digiAction":"إنشاء واجهات متجاوبة وتنفيذ RESTful APIs وعمليات CRUD مع تطبيق مبادئ OOP وممارسات الكود النظيف.","exp.digiResult":"تقليل زمن استجابة الواجهة الخلفية بنسبة 25% وتقديم تطبيقات قابلة للتوسع وسهلة الصيانة.",
+    "exp.weTitle":"متدربة تطوير تطبيقات جوال باستخدام Flutter","exp.weCompany":"We للتدريب والتطوير · القاهرة","exp.weDate":"يوليو 2025 – سبتمبر 2025","exp.weChallenge":"بناء تطبيق جوال متعدد المنصات استخدمه أكثر من 50 مستخدماً تجريبياً خلال مرحلة التقييم.","exp.weAction":"دمجت Firebase Authentication وCloud Firestore وREST APIs وطبقت إدارة الحالة عبر 8 شاشات.","exp.weResult":"حسّنت أداء الواجهة بنسبة 40% وقللت زمن استجابة API بنسبة 30% وعالجت أكثر من 10 مشكلات في الواجهة والمنطق.",
+    "exp.depiTitle":"متدربة تطوير .NET","exp.depiCompany":"DEPI · القاهرة، مصر","exp.depiDate":"أبريل 2024 – أكتوبر 2024","exp.depiChallenge":"تطوير تطبيقات ويب متكاملة باستخدام ASP.NET Core MVC و.NET Core Web API.","exp.depiAction":"بنيت خدمات خلفية باستخدام C# وSQL Server وأنشأت واجهات متجاوبة واستهلكت RESTful APIs.","exp.depiResult":"قدمت كوداً نظيفاً وسهل الصيانة وجاهزاً للإنتاج، وحسّنت أداء النظام بنسبة 20%.",
+    "exp.chcTitle":"متدربة تطوير واجهات أمامية","exp.chcCompany":"الهيئة العامة لتعاونيات البناء والإسكان","exp.chcDate":"أغسطس 2024 – سبتمبر 2024","exp.chcChallenge":"بناء موقع متجاوب وفق ممارسات الواجهات الأمامية الحديثة.","exp.chcAction":"أكملت تدريب HTML وCSS وJavaScript وBootstrap وبنيت موقعاً عملياً.","exp.chcResult":"سلّمت نموذجاً أولياً نظيفاً ومتوافقاً مع المتصفحات في الموعد المحدد.",
     "svc.lbl":"ما أُقدّمه","svc.h":"الخدمات","svc.sub":"خدمات تطوير شاملة مصمّمة حسب احتياجاتك",
     "svc.s1t":"تصميم قواعد البيانات","svc.s1p":"مخططات فعّالة محسّنة للأداء وقابلية التوسع.",
     "svc.s2t":"تطوير واجهات API","svc.s2p":"واجهات RESTful آمنة وموثّقة لتطبيقات الويب والجوال.",
@@ -1146,6 +1175,11 @@ const T = {
     "proj.lbl":"أعمالي الأخيرة","proj.h":"مشاريع مميزة","proj.sub":"تطبيقات حقيقية تُبرز مهاراتي",
     "proj.all":"الكل","proj.mob":"جوال","proj.web":"ويب",
     "proj.p1t":"تطبيق العناية بالبشرة والشعر","proj.p2t":"تطبيق إدارة الجراج","proj.p3t":"تطبيق حجز التنس",
+    "proj.challenge":"التحدي","proj.action":"الإجراء","proj.result":"النتيجة",
+    "proj.p1challenge":"بناء تطبيق تجارة إلكترونية باستخدام Flutter يضم أكثر من 20 منتجاً للعناية والجمال ولوحة إدارة وميزات مخصصة.","proj.p1action":"دمجت Firebase Firestore ولوحة إدارة CRUD وقائمة مفضلة والبحث والتصفية وأكثر من 10 شاشات متجاوبة.","proj.p1result":"حسّن البحث والتصفية اكتشاف المنتجات بنسبة 30–40%، وتم تسليم تطبيق متعدد المنصات جاهز للإنتاج.",
+    "proj.p2challenge":"بناء نظام جوال يدير خدمات الجراج والمركبات وسجلات العملاء بكفاءة.","proj.p2action":"طوّرت التطبيق باستخدام Flutter وFirebase وعمليات CRUD وميزات إدارة تعتمد على الأدوار.","proj.p2result":"قدمت حلاً متكاملاً متعدد المنصات لإدارة الجراج مع مزامنة البيانات في الوقت الفعلي.",
+    "proj.p3challenge":"إنشاء تطبيق جوال لحجز ملاعب التنس مع إدارة الجداول والملفات الشخصية للمستخدمين.","proj.p3action":"بنيت التطبيق باستخدام Flutter وFirebase مع مسار للحجز وتقويم للتوافر وإدارة للحالة.","proj.p3result":"قدمت تجربة حجز متعددة المنصات سهلة الاستخدام وعالية الأداء.",
+    "proj.p1alt":"معاينة تطبيق العناية بالبشرة والشعر","proj.p2alt":"معاينة تطبيق إدارة الجراج","proj.p3alt":"معاينة تطبيق حجز التنس",
     "proj.viewBtn":"عرض المشروع",
     "test.lbl":"ماذا يقولون","test.h":"آراء العملاء",
     "test.sub":"تغذية راجعة من العملاء والمتعاونين","test.soon":"قريباً",
@@ -1181,8 +1215,10 @@ function setLang(l) {
   const ar = l === 'ar';
   document.documentElement.lang = l;
   document.documentElement.dir = ar ? 'rtl' : 'ltr';
+  document.title = T[l]["page.title"];
   const lt = document.getElementById('langToggle');
   if(lt) lt.textContent = ar ? 'EN' : 'AR';
+  if(lt) lt.setAttribute('aria-label', T[l][ar ? "a11y.langToEnglish" : "a11y.langToArabic"]);
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if(T[l] && T[l][key] !== undefined) el.textContent = T[l][key];
@@ -1190,6 +1226,18 @@ function setLang(l) {
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
     if(T[l] && T[l][key] !== undefined) el.placeholder = T[l][key];
+  });
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+    const key = el.getAttribute('data-i18n-alt');
+    if(T[l] && T[l][key] !== undefined) el.alt = T[l][key];
+  });
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const key = el.getAttribute('data-i18n-title');
+    if(T[l] && T[l][key] !== undefined) el.title = T[l][key];
+  });
+  document.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria-label');
+    if(T[l] && T[l][key] !== undefined) el.setAttribute('aria-label', T[l][key]);
   });
   twWords[0] = ar ? 'مطوّرة MERN Stack' : 'MERN Stack Developer';
   twWords[1] = ar ? 'مطوّرة Flutter' : 'Flutter Developer';

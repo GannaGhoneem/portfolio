@@ -288,6 +288,8 @@
     .social-btn:hover{color:#fff;border-color:transparent;transform:translateY(-4px) scale(1.1)}
     .social-btn:hover::before{opacity:1}
     .social-btn i{position:relative;z-index:1}
+    .hero-social .social-btn:focus-visible{color:#fff;border-color:transparent;outline:2px solid var(--teal);outline-offset:3px;transform:translateY(-4px) scale(1.1)}
+    .hero-social .social-btn:focus-visible::before{opacity:1}
 
     /* Stats row */
     .hero-stats{display:flex;gap:2rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);animation:fadeUp .7s var(--ease) .7s both}
@@ -364,12 +366,15 @@
     .cert-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad);transform:scaleY(0);transform-origin:top;transition:transform .3s}
     .cert-item:hover{border-color:rgba(0,229,200,.3);transform:translateX(6px);padding-left:1.7rem}
     .cert-item:hover::before{transform:scaleY(1)}
+    .cert-item:focus-within{border-color:rgba(0,229,200,.3);transform:translateX(6px);padding-left:1.7rem}
+    .cert-item:focus-within::before{transform:scaleY(1)}
     .cert-icon{width:44px;height:44px;border-radius:10px;background:var(--grad);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.95rem;color:#fff;transition:transform .3s var(--spring)}
-    .cert-item:hover .cert-icon{transform:scale(1.1) rotate(-5deg)}
+    .cert-item:hover .cert-icon,.cert-item:focus-within .cert-icon{transform:scale(1.1) rotate(-5deg)}
     .cert-info h4{font-family:var(--fd);font-size:.8rem;font-weight:700;margin-bottom:.2rem;line-height:1.35}
     .cert-info p{font-size:.74rem;color:var(--text2);line-height:1.5}
     .cert-link{margin-left:auto;color:var(--text3);font-size:.82rem;transition:all .3s;flex-shrink:0;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;border:1px solid transparent}
-    .cert-link:hover{color:var(--teal);border-color:var(--teal);background:var(--teal-dim)}
+    .cert-link:hover,.cert-link:focus-visible{color:var(--teal);border-color:var(--teal);background:var(--teal-dim)}
+    .cert-link:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
 
     /* Graduation project card */
     .grad-project-card {
@@ -550,23 +555,23 @@
     /* ── CONTACT ── */
     .contact-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:stretch}
     .contact-info-card{
-      background:var(--grad);border-radius:var(--radius);padding:2.75rem;
+      background:linear-gradient(135deg,#006f78 0%,#00658a 100%);border-radius:var(--radius);padding:2.75rem;
       display:flex;flex-direction:column;gap:1.35rem;position:relative;overflow:hidden;
     }
-    .contact-info-card::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.08)}
-    .contact-info-card::after{content:'';position:absolute;bottom:-30px;left:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.06)}
+    .contact-info-card::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.05)}
+    .contact-info-card::after{content:'';position:absolute;bottom:-30px;left:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.04)}
     .contact-info-card h3{font-family:var(--fd);font-size:1.7rem;font-weight:800;color:#fff;margin-bottom:.3rem;position:relative;z-index:1}
-    .contact-info-card>p{font-size:.93rem;color:rgba(255,255,255,.8);line-height:1.8;position:relative;z-index:1}
+    .contact-info-card>div>p{font-size:.93rem;color:#fff;line-height:1.8;position:relative;z-index:1}
     .contact-item-flat{
-      display:flex;align-items:center;gap:.9rem;background:rgba(255,255,255,.12);
+      display:flex;align-items:center;gap:.9rem;background:rgba(0,35,50,.22);
       border-radius:var(--radius-sm);padding:.95rem 1.2rem;transition:all .3s;position:relative;z-index:1;
     }
-    .contact-item-flat:hover{background:rgba(255,255,255,.2);transform:translateX(4px)}
+    .contact-item-flat:hover{background:rgba(0,35,50,.34);transform:translateX(4px)}
     .contact-item-flat i{font-size:.95rem;color:#fff;width:18px;text-align:center}
     .contact-item-flat a,.contact-item-flat span{font-size:.88rem;color:#fff;font-weight:500}
     /* إزالة التنسيق الخاص بالواتساب ليكون مثل باقي الأزرار */
-    .contact-item-flat.whatsapp{background:rgba(255,255,255,.12)}
-    .contact-item-flat.whatsapp:hover{background:rgba(255,255,255,.2)}
+    .contact-item-flat.whatsapp{background:rgba(0,35,50,.22)}
+    .contact-item-flat.whatsapp:hover{background:rgba(0,35,50,.34)}
 
     .form-card{
       background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
@@ -618,13 +623,30 @@
     .footer-top{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:4rem 2.5rem;gap:2rem}
     .footer-logo{font-family:var(--fd);font-size:3.2rem;font-weight:900;text-align:center;letter-spacing:-.04em;background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .footer-section-label{font-family:var(--fd);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.85rem}
-    .footer-bottom{border-top:1px solid var(--border);max-width:1280px;margin:0 auto;padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-    .footer-copy{font-size:.81rem;color:var(--text3)}
+    .footer-bottom{border-top:1px solid var(--border);max-width:1280px;margin:0 auto;padding:1.5rem 2.5rem;display:flex;justify-content:center;align-items:center}
     .footer-links-group {
       display: flex;
       gap: 0.6rem;
       flex-wrap: wrap;
+      justify-content: center;
     }
+    .footer-links-group .social-btn:hover,
+    .footer-links-group .social-btn:focus-visible{color:#000}
+    .footer-links-group .social-btn > span{position:relative;z-index:1;transition:color .35s var(--spring)}
+    .footer-links-group .social-btn:focus-visible{border-color:transparent;outline:2px solid var(--teal);outline-offset:3px;transform:translateY(-4px) scale(1.1)}
+    .footer-links-group .social-btn:focus-visible::before{opacity:1}
+    .footer-links-group .social-btn:hover > span,
+    .footer-links-group .social-btn:focus-visible > span,
+    .footer-links-group .social-btn:hover i,
+    .footer-links-group .social-btn:focus-visible i{color:#000}
+
+    [dir="rtl"] body{line-height:1.75}
+    [dir="rtl"] .mobile-nav a:hover{padding-left:.5rem;padding-right:1rem}
+    [dir="rtl"] .cert-item::before{left:auto;right:0}
+    [dir="rtl"] .cert-item:hover,[dir="rtl"] .cert-item:focus-within{transform:translateX(-6px);padding-left:1.25rem;padding-right:1.7rem}
+    [dir="rtl"] .cert-link{margin-left:0;margin-right:auto}
+    [dir="rtl"] .contact-item-flat:hover{transform:translateX(-4px)}
+    [dir="rtl"] .who-am-i-text{margin-left:0!important;margin-right:auto;text-align:right}
 
     #btt{
       position:fixed;bottom:1.75rem;right:1.75rem;width:48px;height:48px;border-radius:50%;
@@ -663,6 +685,7 @@
       .hero-name{font-size:clamp(2.6rem,9vw,3.8rem)}
       .proj-grid{grid-template-columns:1fr}
       .hero-stats{gap:1rem}
+      .footer-links-group{width:100%}
     }
   </style>
 </head>
@@ -685,12 +708,12 @@
       <a href="#contact"      data-i18n="nav.contact">Contact</a>
     </div>
     <div class="nav-actions">
-      <button class="icon-btn" id="themeToggle" title="Toggle theme">
+      <button class="icon-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme" data-i18n-title="a11y.theme" data-i18n-aria-label="a11y.theme">
         <i class="fa-solid fa-sun" id="themeIcon"></i>
       </button>
-      <button class="icon-btn lang-btn" id="langToggle">AR</button>
+      <button class="icon-btn lang-btn" id="langToggle" aria-label="Switch to Arabic">AR</button>
       <a href="#contact" class="nav-cta" data-i18n="nav.hire">Contact Me</a>
-      <button class="ham-btn" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+      <button class="ham-btn" id="hamburger" aria-label="Open navigation menu" data-i18n-aria-label="a11y.menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </div>
 </nav>
@@ -732,10 +755,10 @@
         <a href="https://drive.google.com/file/d/1ypBK-6z-_N_ov9JYHrjPzdi70g-8XasC/view" target="_blank" rel="noopener noreferrer" class="btn-ghost"><i class="fa-solid fa-download"></i> <span data-i18n="hero.downloadCV">Download CV</span></a>
       </div>
       <div class="hero-social">
-        <a href="https://github.com/GannaGhoneem" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i></a>
-        <a href="www.linkedin.com/in/ganna-ghoneem" target="_blank" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="gannaghoneem8@gmail.com" class="social-btn"><i class="fa-regular fa-envelope"></i></a>
-        <a href="https://wa.me/201033266058" target="_blank" class="social-btn"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://github.com/GannaGhoneem" target="_blank" class="social-btn" aria-label="Visit Ganna Ghoneem’s GitHub profile" data-i18n-aria-label="a11y.github"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/ganna-ghoneem/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Visit Ganna Ghoneem’s LinkedIn profile" data-i18n-aria-label="a11y.linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=gannaghoneem8@gmail.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Send an email to Ganna Ghoneem using Gmail" data-i18n-aria-label="a11y.gmail"><i class="fa-regular fa-envelope"></i></a>
+        <a href="https://wa.me/201018958739" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Contact Ganna Ghoneem on WhatsApp" data-i18n-aria-label="a11y.whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
       </div>
 
     </div>
@@ -782,7 +805,7 @@
         <div class="about-meta">
           <div class="about-meta-item"><span class="meta-icon">📍</span> <span data-i18n="about.loc">Cairo, Egypt</span></div>
           <div class="about-meta-item"><span class="meta-icon">💼</span> <span data-i18n="about.avail">Open to Work</span></div>
-          <div class="about-meta-item"><span class="meta-icon">🎓</span> <span>Damietta University · Computer Science · 2024</span></div>
+          <div class="about-meta-item"><span class="meta-icon">🎓</span> <span data-i18n="about.educationMeta">Damietta University · Computer Science · 2024</span></div>
         </div>
       </div>
     </div>
@@ -793,7 +816,7 @@
 <section id="education" class="section">
   <div class="container">
     <div class="sec-label reveal" data-i18n="edu.lbl">Academic Background</div>
-    <h2 class="sec-heading reveal d1" data-i18n="edu.h">Education &amp; <span class="gradient-text">Certifications</span></h2>
+    <h2 class="sec-heading reveal d1"><span data-i18n="edu.h">Education &amp;</span> <span class="gradient-text" data-i18n="edu.certs">Certifications</span></h2>
     <p class="sec-sub reveal d2" data-i18n="edu.sub">My academic journey in technology</p>
     <div class="edu-layout">
    <div class="reveal d1">
@@ -808,10 +831,10 @@
           <div style="margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px dashed var(--border); text-align: left;">
             <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
               <i class="fa-solid fa-car-side" style="color: var(--teal);"></i>
-              <h4 style="font-family: var(--fd); font-size: 0.9rem; font-weight: 700; margin: 0;">Graduation Project: CODA E-Learning Platform <span style="background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; margin-left: 0.5rem;">(B+)</span></h4>
+              <h4 style="font-family: var(--fd); font-size: 0.9rem; font-weight: 700; margin: 0;"><span data-i18n="edu.gradTitle">Graduation Project: CODA E-Learning Platform</span> <span style="background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; margin-left: 0.5rem;">(B+)</span></h4>
             </div>
-            <p style="color: var(--text2); font-size: 0.85rem; margin-bottom: 0.3rem;"><strong>Department:</strong> Computer Science</p>
-            <p style="color: var(--text2); font-size: 0.85rem; line-height: 1.6;">A comprehensive e-learning platform designed to help students and graduates develop their technical skills through interactive courses, quizzes, and learning resources, with a user-friendly and responsive web interface.</p>
+            <p style="color: var(--text2); font-size: 0.85rem; margin-bottom: 0.3rem;" data-i18n="edu.gradDept">Department: Computer Science</p>
+            <p style="color: var(--text2); font-size: 0.85rem; line-height: 1.6;" data-i18n="edu.gradDesc">A comprehensive e-learning platform designed to help students and graduates develop their technical skills through interactive courses, quizzes, and learning resources, with a user-friendly and responsive web interface.</p>
           </div>
         </div>
       </div>
@@ -819,10 +842,11 @@
         <div class="edu-section-title"><i class="fa-solid fa-certificate"></i> <span data-i18n="edu.certs">Certifications</span></div>
         <div class="cert-list ">
           <!-- الشهادات كما هي -->
-          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-code"></i></div><div class="cert-info"><h4>frontend fundamentals</h4><p>Front-End (HTML, CSS) · March 2026</p></div><a href="https://drive.google.com/file/d/1cL20-KxedtN-C-WTubqJgO8f3d7PR5v1/view?usp=drive_open" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
-          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-palette"></i></div><div class="cert-info"><h4>MongoDB Course</h4><p>NoSQL Database · MongoDB CRUD Operations, Aggregation, Indexing · 2026</p></div><a href="https://drive.google.com/file/d/1b4kv-XxSJgRSO0P3yCXcTc7p5W_FO1S2/view" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
-          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-mobile-screen"></i></div><div class="cert-info"><h4>React.js Front-End Development Course</h4><p>React · React Hooks, Functional Components, Context API, React Router, API Integration · 2026</p></div><a href="https://drive.google.com/file/d/1r4edfQbqXhIGNftMovrfDk9diA2ak7fa/view" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
-           <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-mobile-screen"></i></div><div class="cert-info"><h4>Node.js Backend Development Course</h4><p>MongoDB Database · APIs with Node.js & Express. Authentication & Authorization. Middleware Implementation. 2026</p></div><a href="https://maharatech.gov.eg/mod/customcert/view.php?id=11395&downloadown=1" class="cert-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-laptop-code"></i></div><div class="cert-info"><h4 data-i18n="edu.metaCertTitle">Meta Front-End Developer</h4><p data-i18n="edu.metaCertDesc">Professional Certificate covering HTML, CSS, JavaScript, React.js, responsive web design, version control, and modern front-end development practices.</p></div><a href="https://drive.google.com/file/d/1PT0cWWwU7ZIvOHiIAB6gOhUOACYj3per/view?usp=sharing" class="cert-link" target="_blank" rel="noopener noreferrer" aria-label="View Meta Front-End Developer certificate" data-i18n-aria-label="a11y.metaCert"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-code"></i></div><div class="cert-info"><h4 data-i18n="edu.cert1Title">Frontend Fundamentals</h4><p data-i18n="edu.cert1Desc">Front-End (HTML, CSS) · March 2026</p></div><a href="https://drive.google.com/file/d/1cL20-KxedtN-C-WTubqJgO8f3d7PR5v1/view?usp=drive_open" class="cert-link" target="_blank" rel="noopener noreferrer" aria-label="View Frontend Fundamentals certificate" data-i18n-aria-label="a11y.cert1"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-palette"></i></div><div class="cert-info"><h4 data-i18n="edu.cert2Title">MongoDB Course</h4><p data-i18n="edu.cert2Desc">NoSQL Database · MongoDB CRUD Operations, Aggregation, Indexing · 2026</p></div><a href="https://drive.google.com/file/d/1b4kv-XxSJgRSO0P3yCXcTc7p5W_FO1S2/view" class="cert-link" target="_blank" rel="noopener noreferrer" aria-label="View MongoDB Course certificate" data-i18n-aria-label="a11y.cert2"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+          <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-mobile-screen"></i></div><div class="cert-info"><h4 data-i18n="edu.cert3Title">React.js Front-End Development Course</h4><p data-i18n="edu.cert3Desc">React · React Hooks, Functional Components, Context API, React Router, API Integration · 2026</p></div><a href="https://drive.google.com/file/d/1r4edfQbqXhIGNftMovrfDk9diA2ak7fa/view" class="cert-link" target="_blank" rel="noopener noreferrer" aria-label="View React.js Front-End Development certificate" data-i18n-aria-label="a11y.cert3"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+           <div class="cert-item"><div class="cert-icon"><i class="fa-solid fa-mobile-screen"></i></div><div class="cert-info"><h4 data-i18n="edu.cert4Title">Node.js Backend Development Course</h4><p data-i18n="edu.cert4Desc">MongoDB Database · APIs with Node.js &amp; Express.js · Authentication and Authorization · Middleware Implementation · 2026</p></div><a href="./Course_Certificate_En_node.pdf" class="cert-link" target="_blank" rel="noopener noreferrer" aria-label="View Node.js Backend Development certificate" data-i18n-aria-label="a11y.cert4"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
         </div>
       </div>
     </div>
@@ -842,28 +866,26 @@
       <button class="skill-tab" data-panel="soft"><i class="fa-solid fa-brain"></i> <span data-i18n="sk.soft">Soft Skills</span></button>
     </div>
     <div class="skills-panel active" id="panel-backend">
-      <div class="sk-card-lg reveal"><div class="sk-card-icon">🟢</div><h4>Node.js / Express.js</h4><p>Building scalable, maintainable backend APIs and servers using Node.js and Express framework.</p></div>
-      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">🗃️</div><h4>SQL Server</h4><p>Building optimized database schemas and complex queries for efficient data storage and retrieval.</p></div>
-      <div class="sk-card-lg reveal d2"><div class="sk-card-icon">⌨️</div><h4>RESTful APIs</h4><p>Designing and implementing clean, documented RESTful APIs for web .</p></div>
-      <div class="sk-card-lg reveal d3"><div class="sk-card-icon">🔷</div><h4>Database Management (phpMyAdmin)</h4><p>
-Managing and administering MySQL databases through phpMyAdmin, including creating tables, running SQL queries, and handling database structure and data efficiently.</p></div>
-      <div class="sk-card-lg reveal"><div class="sk-card-icon">🍃</div><h4>MongoDB</h4><p>Schema design, aggregation pipelines, and integration with Mongoose for MERN applications.</p></div>
-      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">🔥</div><h4>Version Control (Git Workflow)</h4><p>Managing code versions, branching strategies, and collaboration using Git & GitHub.</p></div>
+      <div class="sk-card-lg reveal"><div class="sk-card-icon">🟢</div><h4>Node.js / Express.js</h4><p data-i18n="sk.nodeDesc">Building scalable, maintainable backend APIs and servers using Node.js and Express framework.</p></div>
+      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">🗃️</div><h4>SQL Server</h4><p data-i18n="sk.sqlDesc">Building optimized database schemas and complex queries for efficient data storage and retrieval.</p></div>
+      <div class="sk-card-lg reveal d2"><div class="sk-card-icon">⌨️</div><h4>RESTful APIs</h4><p data-i18n="sk.apiDesc">Designing and implementing clean, documented RESTful APIs for web applications.</p></div>
+      <div class="sk-card-lg reveal d3"><div class="sk-card-icon">🔷</div><h4>Database Management (phpMyAdmin)</h4><p data-i18n="sk.phpmyadminDesc">Managing and administering MySQL databases through phpMyAdmin, including creating tables, running SQL queries, and handling database structure and data efficiently.</p></div>
+      <div class="sk-card-lg reveal"><div class="sk-card-icon">🍃</div><h4>MongoDB</h4><p data-i18n="sk.mongoDesc">Schema design, aggregation pipelines, and integration with Mongoose for MERN applications.</p></div>
+      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">🔥</div><h4>Version Control (Git Workflow)</h4><p data-i18n="sk.gitDesc">Managing code versions, branching strategies, and collaboration using Git &amp; GitHub.</p></div>
     </div>
     <div class="skills-panel" id="panel-frontend">
-      <div class="sk-card-lg reveal"><div class="sk-card-icon">⚛️</div><h4>React.js</h4><p>Building dynamic, component-based UIs with hooks, context, and modern React patterns.</p></div>
-      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">🎨</div><h4>UI/UX Design (Figma)</h4><p>
-Designing user-friendly interfaces, creating wireframes and prototypes, and building visually appealing, responsive UI/UX designs focused on usability and user experience.</p></div>
-      <div class="sk-card-lg reveal d2"><div class="sk-card-icon">🌐</div><h4>HTML5 / CSS3</h4><p>Semantic HTML, advanced CSS animations, Flexbox, Grid, and responsive design.</p></div>
-      <div class="sk-card-lg reveal d3"><div class="sk-card-icon">📜</div><h4>JavaScript (ES6+)</h4><p>Modern JS features, async/await, DOM manipulation, and event-driven programming.</p></div>
-      <div class="sk-card-lg reveal"><div class="sk-card-icon">🎨</div><h4>Bootstrap / Tailwind</h4><p>Rapid, responsive UI development using utility-first and component-based CSS frameworks.</p></div>
-      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">✨</div><h4>CSS Animations</h4><p>Engaging micro-interactions, transitions, and keyframe animations for polished UX.</p></div>
+      <div class="sk-card-lg reveal"><div class="sk-card-icon">⚛️</div><h4>React.js</h4><p data-i18n="sk.reactDesc">Building dynamic, component-based UIs with hooks, context, and modern React patterns.</p></div>
+      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">🎨</div><h4>UI/UX Design (Figma)</h4><p data-i18n="sk.figmaDesc">Designing user-friendly interfaces, creating wireframes and prototypes, and building visually appealing, responsive UI/UX designs focused on usability and user experience.</p></div>
+      <div class="sk-card-lg reveal d2"><div class="sk-card-icon">🌐</div><h4>HTML5 / CSS3</h4><p data-i18n="sk.htmlDesc">Semantic HTML, advanced CSS animations, Flexbox, Grid, and responsive design.</p></div>
+      <div class="sk-card-lg reveal d3"><div class="sk-card-icon">📜</div><h4>JavaScript (ES6+)</h4><p data-i18n="sk.jsDesc">Modern JavaScript features, async/await, DOM manipulation, and event-driven programming.</p></div>
+      <div class="sk-card-lg reveal"><div class="sk-card-icon">🎨</div><h4>Bootstrap / Tailwind</h4><p data-i18n="sk.cssFrameworkDesc">Rapid, responsive UI development using utility-first and component-based CSS frameworks.</p></div>
+      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">✨</div><h4>CSS Animations</h4><p data-i18n="sk.animationDesc">Engaging micro-interactions, transitions, and keyframe animations for polished UX.</p></div>
     </div>
     <div class="skills-panel" id="panel-soft">
-      <div class="sk-card-lg reveal"><div class="sk-card-icon">🔍</div><h4 data-i18n="about.soft1">Problem Solving</h4><p>Analytical thinking to break down complex problems into clean, efficient solutions.</p></div>
-      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">🤝</div><h4 data-i18n="about.soft2">Teamwork</h4><p>Collaborative approach to development with strong communication in team environments.</p></div>
-      <div class="sk-card-lg reveal d2"><div class="sk-card-icon">⏳</div><h4 data-i18n="about.soft3">Time Management</h4><p>Delivering projects on schedule with proper planning and prioritization techniques.</p></div>
-      <div class="sk-card-lg reveal d3"><div class="sk-card-icon">💬</div><h4 data-i18n="about.soft4">Communication</h4><p>Clear articulation of technical concepts to both technical and non-technical stakeholders.</p></div>
+      <div class="sk-card-lg reveal"><div class="sk-card-icon">🔍</div><h4 data-i18n="about.soft1">Problem Solving</h4><p data-i18n="sk.problemDesc">Analytical thinking to break down complex problems into clean, efficient solutions.</p></div>
+      <div class="sk-card-lg reveal d1"><div class="sk-card-icon">🤝</div><h4 data-i18n="about.soft2">Teamwork</h4><p data-i18n="sk.teamDesc">Collaborative approach to development with strong communication in team environments.</p></div>
+      <div class="sk-card-lg reveal d2"><div class="sk-card-icon">⏳</div><h4 data-i18n="about.soft3">Time Management</h4><p data-i18n="sk.timeDesc">Delivering projects on schedule with proper planning and prioritization techniques.</p></div>
+      <div class="sk-card-lg reveal d3"><div class="sk-card-icon">💬</div><h4 data-i18n="about.soft4">Communication</h4><p data-i18n="sk.communicationDesc">Clear articulation of technical concepts to both technical and non-technical stakeholders.</p></div>
     </div>
   </div>
 </section>
@@ -876,18 +898,10 @@ Designing user-friendly interfaces, creating wireframes and prototypes, and buil
     <h2 class="sec-heading reveal d1"><span class="gradient-text" data-i18n="exp.h">Work Experience</span></h2>
     <p class="sec-sub reveal d2" data-i18n="exp.sub">Building solutions and delivering value</p>
     <div class="timeline reveal d1">
-      <div class="t-item"><div class="t-dot"></div><div class="t-card"><div class="t-header"><div class="t-title-wrap"><div class="t-company-logo">DIGI</div><div><div class="t-title">MERN Stack Developer (Intern)</div><div class="t-company">Digilians · Cairo, Egypt</div></div></div><span class="t-date">Jan 2026 – Present</span></div><div class="t-cac"><div class="t-cac-item"><div><div class="t-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> Challenge</div><p class="t-cac-text">Building full‑stack web applications using React.js, Node.js, Express.js, and MongoDB; delivering projects on schedule.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> Action</div><p class="t-cac-text">Creating responsive UIs and executing RESTful APIs and CRUD operations, applying OOP principles and clean code practices.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label result"><i class="fa-solid fa-circle-check"></i> Result</div><p class="t-cac-text">Reduced backend response times by 25% and delivered maintainable, scalable applications.</p></div></div></div><div class="t-tech"><strong>Tech:</strong> React.js · Node.js · Express.js · MongoDB · Tailwind · Git</div></div></div>
-      <div class="t-item"><div class="t-dot"></div><div class="t-card"><div class="t-header"><div class="t-title-wrap"><div class="t-company-logo" style="width: 100px;">Primalab</div><div><div class="t-title">Front-End Development Diploma</div><div class="t-company">Primalab Training and Development · Damietta</div></div></div><span class="t-date">Dec 2023 – Feb 2024</span></div><div class="t-cac"><div class="t-cac-item"><div><div class="t-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> Challenge</div><p class="t-cac-text">
-Learning full front-end development roadmap from fundamentals to advanced concepts including modern UI development.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> Action</div><p class="t-cac-text">
-Studied core technologies including HTML, CSS, JavaScript (ES6+), Bootstrap, and React.js with hands-on project development and real-world UI implementations.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label result"><i class="fa-solid fa-circle-check"></i> Result</div><p class="t-cac-text">
-Gained strong practical experience in end-to-end front-end development and successfully built responsive, interactive web applications using modern web technologies.</p></div></div></div><div class="t-tech"><strong>Tech:</strong> HTML5 · CSS3 · JavaScript · Bootstrap . Typescript . jQuery . json . ajax . opp . React . </div></div></div>
-      <div class="t-item"><div class="t-dot"></div><div class="t-card"><div class="t-header"><div class="t-title-wrap"><div class="t-company-logo" style="width: 80px;">Udacity</div><div><div class="t-title">Front-End Development Trainee</div><div class="t-company">Udacity · Cairo, Egypt</div></div></div><span class="t-date">Jan 2023 – Jul 2023</span></div><div class="t-cac"><div class="t-cac-item"><div><div class="t-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> Challenge</div><p class="t-cac-text">
-Learning modern front-end development practices and building responsive, user-friendly web interfaces in a self-paced online learning environment.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> Action</div><p class="t-cac-text">
-Completed an online Front-End Development program covering HTML, CSS, JavaScript, and Bootstrap, with hands-on practice through real-world projects focstyle="width: 80px;used on responsive design, clean code, and UI development.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label result"><i class="fa-solid fa-circle-check"></i> Result</div><p class="t-cac-text">
-Gained strong practical skills in front-end development and successfully built multiple responsive web projects, improving UI design and problem-solving abilities.</p></div></div></div><div class="t-tech"><strong>Tech:</strong> HTML5 · CSS3 · JavaScript · Bootstrap </div></div></div>
-      <div class="t-item"><div class="t-dot"></div><div class="t-card"><div class="t-header"><div class="t-title-wrap"><div class="t-company-logo">DU</div><div><div class="t-title">Bachelor’s Degree in Computer Science</div><div class="t-company">Faculty of Science – Damietta University</div></div></div><span class="t-date">Sep 2020 – Sep 2024</span></div><div class="t-cac"><div class="t-cac-item"><div><div class="t-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> Challenge</div><p class="t-cac-text">Comprehensive academic journey covering software engineering, data structures, databases, and web development fundamentals.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> Action</div><p class="t-cac-text">
-Studied core computer science subjects and applied practical skills through multiple academic projects and hands-on training in web development and backend technologies.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label result"><i class="fa-solid fa-circle-check"></i> Result</div><p class="t-cac-text">
-Graduated with Very Good (B+) grade and successfully completed graduation project CODA, applying full-stack development skills and software engineering principles.</p></div></div></div><div class="t-tech"><strong>Tech:</strong> HTML5 · CSS3 · JavaScript · Bootstrap . php . jQuery . </div></div></div>
+      <div class="t-item"><div class="t-dot"></div><div class="t-card"><div class="t-header"><div class="t-title-wrap"><div class="t-company-logo">DIGI</div><div><div class="t-title" data-i18n="exp.digiTitle">MERN Stack Developer (Intern)</div><div class="t-company" data-i18n="exp.digiCompany">Digilians · Cairo, Egypt</div></div></div><span class="t-date" data-i18n="exp.digiDate">Jan 2026 – Present</span></div><div class="t-cac"><div class="t-cac-item"><div><div class="t-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="proj.challenge">Challenge</span></div><p class="t-cac-text" data-i18n="exp.digiChallenge">Building full-stack web applications using React.js, Node.js, Express.js, and MongoDB; delivering projects on schedule.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="proj.action">Action</span></div><p class="t-cac-text" data-i18n="exp.digiAction">Creating responsive UIs and executing RESTful APIs and CRUD operations, applying OOP principles and clean code practices.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="proj.result">Result</span></div><p class="t-cac-text" data-i18n="exp.digiResult">Reduced backend response times by 25% and delivered maintainable, scalable applications.</p></div></div></div><div class="t-tech"><strong data-i18n="exp.tech">Tech:</strong> React.js · Node.js · Express.js · MongoDB · Tailwind · Git</div></div></div>
+      <div class="t-item"><div class="t-dot"></div><div class="t-card"><div class="t-header"><div class="t-title-wrap"><div class="t-company-logo" style="width:100px">Primalab</div><div><div class="t-title" data-i18n="exp.primaTitle">Front-End Development Diploma</div><div class="t-company" data-i18n="exp.primaCompany">Primalab Training and Development · Damietta</div></div></div><span class="t-date" data-i18n="exp.primaDate">Dec 2023 – Feb 2024</span></div><div class="t-cac"><div class="t-cac-item"><div><div class="t-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="proj.challenge">Challenge</span></div><p class="t-cac-text" data-i18n="exp.primaChallenge">Learning the complete front-end development roadmap from fundamentals to advanced concepts, including modern UI development.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="proj.action">Action</span></div><p class="t-cac-text" data-i18n="exp.primaAction">Studied HTML, CSS, JavaScript, Bootstrap, and React.js through hands-on projects and real-world UI implementations.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="proj.result">Result</span></div><p class="t-cac-text" data-i18n="exp.primaResult">Gained practical end-to-end front-end experience and built responsive, interactive web applications using modern technologies.</p></div></div></div><div class="t-tech"><strong data-i18n="exp.tech">Tech:</strong> HTML5 · CSS3 · JavaScript · Bootstrap · TypeScript · jQuery · JSON · Ajax · OOP · React.js</div></div></div>
+      <div class="t-item"><div class="t-dot"></div><div class="t-card"><div class="t-header"><div class="t-title-wrap"><div class="t-company-logo" style="width:80px">Udacity</div><div><div class="t-title" data-i18n="exp.udacityTitle">Front-End Development Trainee</div><div class="t-company" data-i18n="exp.udacityCompany">Udacity · Cairo, Egypt</div></div></div><span class="t-date" data-i18n="exp.udacityDate">Jan 2023 – Jul 2023</span></div><div class="t-cac"><div class="t-cac-item"><div><div class="t-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="proj.challenge">Challenge</span></div><p class="t-cac-text" data-i18n="exp.udacityChallenge">Learning modern front-end practices and building responsive, user-friendly interfaces in a self-paced online environment.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="proj.action">Action</span></div><p class="t-cac-text" data-i18n="exp.udacityAction">Completed a Front-End Development program covering HTML, CSS, JavaScript, and Bootstrap through practical projects focused on responsive design, clean code, and UI development.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="proj.result">Result</span></div><p class="t-cac-text" data-i18n="exp.udacityResult">Built multiple responsive web projects and strengthened practical UI design and problem-solving skills.</p></div></div></div><div class="t-tech"><strong data-i18n="exp.tech">Tech:</strong> HTML5 · CSS3 · JavaScript · Bootstrap</div></div></div>
+      <div class="t-item"><div class="t-dot"></div><div class="t-card"><div class="t-header"><div class="t-title-wrap"><div class="t-company-logo">DU</div><div><div class="t-title" data-i18n="exp.duTitle">Bachelor’s Degree in Computer Science</div><div class="t-company" data-i18n="exp.duCompany">Faculty of Science – Damietta University</div></div></div><span class="t-date" data-i18n="exp.duDate">Sep 2020 – Sep 2024</span></div><div class="t-cac"><div class="t-cac-item"><div><div class="t-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="proj.challenge">Challenge</span></div><p class="t-cac-text" data-i18n="exp.duChallenge">A comprehensive academic journey covering software engineering, data structures, databases, and web development fundamentals.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="proj.action">Action</span></div><p class="t-cac-text" data-i18n="exp.duAction">Studied core computer science subjects and applied practical skills through academic projects and hands-on training in web and backend development.</p></div></div><div class="t-cac-item"><div><div class="t-cac-label result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="proj.result">Result</span></div><p class="t-cac-text" data-i18n="exp.duResult">Graduated with a Very Good (B+) grade and completed the CODA graduation project using full-stack development and software engineering principles.</p></div></div></div><div class="t-tech"><strong data-i18n="exp.tech">Tech:</strong> HTML5 · CSS3 · JavaScript · Bootstrap · PHP · jQuery</div></div></div>
     </div>
   </div>
 </section>
@@ -923,56 +937,89 @@ Graduated with Very Good (B+) grade and successfully completed graduation projec
     <p class="sec-sub reveal d2" data-i18n="proj.sub">Real-world applications that showcase my skills and problem-solving approach</p>
     
     <div class="proj-grid">
+      <!-- projectUrl: "" // Add the official HRX live project or repository URL here -->
+      <div class="proj-card reveal" data-cat="web" data-project-url="">
+        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,229,200,.18),rgba(0,184,240,.12))">
+          <div class="proj-visual-overlay"></div>
+          <img src="hrx-responsive-mockup.png" data-i18n-alt="proj.hrxAlt" alt="Responsive HRX human resources management system displayed on laptop, tablet, and mobile devices">
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span class="proj-type" data-i18n="proj.web">Web</span><span class="proj-year">2026</span></div>
+          <h3><span data-i18n="proj.hrxTitle">HRX – Human Resources Management System</span></h3>
+          <p class="proj-year" data-i18n="proj.hrxMeta">Graduation Project / Team Project · ITC 2026 Competition Finalist</p>
+          <div class="proj-cac">
+            <div class="proj-cac-item"><div class="proj-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="proj.challenge">Challenge</span></div><p data-i18n="proj.hrxChallenge">Build a scalable HRMS platform that brings employee management, attendance, payroll, and leave workflows together in one responsive and maintainable system.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="proj.action">Action</span></div><p data-i18n="proj.hrxAction">Collaborated on the HRX team project and developed the public-facing HRX Home frontend using React.js and React Router. Built the homepage, filterable services page, and about page, and created reusable Navbar, Footer, and Layout components with responsive CSS.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="proj.result">Result</span></div><p data-i18n="proj.hrxResult">Delivered a responsive and modular web experience as part of a full-stack HRMS powered primarily by Odoo and supplemented by Node.js, Express.js, and MongoDB. The project reached the finals of the ITC 2026 Competition.</p></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.75rem"><span class="svc-chip">React.js</span><span class="svc-chip">React Router</span><span class="svc-chip">Responsive CSS</span><span class="svc-chip">Odoo</span><span class="svc-chip">Node.js</span><span class="svc-chip">Express.js</span><span class="svc-chip">MongoDB</span><span class="svc-chip">Git/GitHub</span></div>
+          <a class="proj-view-btn" aria-disabled="true" tabindex="0"><i class="fa-solid fa-play"></i> <span data-i18n="proj.viewBtn">View Project</span></a>
+        </div>
+      </div>
+      <div class="proj-card reveal d1" data-cat="web" data-project-url="https://github.com/GannaGhoneem/news-project">
+        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,229,200,.18),rgba(0,184,240,.12))">
+          <div class="proj-visual-overlay"></div>
+          <img src="goaltime-responsive-mockup-expanded.png" data-i18n-alt="proj.goaltimeAlt" alt="GOALTIME responsive sports news website displayed on laptop, tablet, and mobile">
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span class="proj-type" data-i18n="proj.web">Web</span><span class="proj-year">2026</span></div>
+          <h3><span data-i18n="proj.goaltimeTitle">Sports News Web Application</span></h3>
+          <div class="proj-cac">
+            <div class="proj-cac-item"><div class="proj-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="proj.challenge">Challenge</span></div><p data-i18n="proj.goaltimeChallenge">Bring categorized news and detailed football information together in one clear, responsive platform.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="proj.action">Action</span></div><p data-i18n="proj.goaltimeAction">Built API-powered sports, entertainment, and world news sections with live match search, league standings, team statistics, weather, currency rates, and a currency converter.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="proj.result">Result</span></div><p data-i18n="proj.goaltimeResult">Delivered an adaptive GOALTIME experience across desktop, tablet, and mobile devices with dedicated Matches, Standings, and Stats views.</p></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.75rem"><span class="svc-chip">HTML5</span><span class="svc-chip">CSS3</span><span class="svc-chip">JavaScript</span><span class="svc-chip">Bootstrap 5</span></div>
+          <a href="https://github.com/GannaGhoneem/news-project" target="_blank" rel="noopener noreferrer" class="proj-view-btn"><i class="fa-solid fa-play"></i> <span data-i18n="proj.viewBtn">View Project</span></a>
+        </div>
+      </div>
       <div class="proj-card reveal" data-cat="mobile">
         <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,229,200,.18),rgba(0,184,240,.12))">
           <div class="proj-visual-overlay"></div>
-           <img src="Gemini_Generated_Image_dwaavodwaavodwaa.png">
+           <img src="Gemini_Generated_Image_dwaavodwaavodwaa.png" alt="Salary management website preview" data-i18n-alt="proj.salaryAlt">
         </div>
         <div class="proj-body">
           <div class="proj-meta"><span class="proj-type" data-i18n="proj.web">Web</span><span class="proj-year">2026</span></div>
           <h3><span data-i18n="proj.p1t">Salary Website</span></h3>
           <div class="proj-cac">
-            <div class="proj-cac-item"><div class="proj-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> Challenge</div><p>Build a salary management website to calculate employee salaries, bonuses, deductions, and monthly payroll efficiently.</p></div>
-            <div class="proj-cac-item"><div class="proj-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> Action</div><p>Developed a responsive website with salary calculation logic, employee management system, payroll tracking, and clean UI using modern web technologies.</p></div>
-            <div class="proj-cac-item"><div class="proj-cac-label result"><i class="fa-solid fa-circle-check"></i> Result</div><p>Automated payroll calculations reduced manual errors and improved efficiency. Delivered a user-friendly and scalable salary management system.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="proj.challenge">Challenge</span></div><p data-i18n="proj.salaryChallenge">Build a salary management website to calculate employee salaries, bonuses, deductions, and monthly payroll efficiently.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="proj.action">Action</span></div><p data-i18n="proj.salaryAction">Developed a responsive website with salary calculation logic, employee management system, payroll tracking, and clean UI using modern web technologies.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="proj.result">Result</span></div><p data-i18n="proj.salaryResult">Automated payroll calculations reduced manual errors and improved efficiency. Delivered a user-friendly and scalable salary management system.</p></div>
           </div>
           <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.75rem"><span class="svc-chip">HTML</span><span class="svc-chip">CSS</span><span class="svc-chip">JavaScript</span><span class="svc-chip">Bootstrap</span></div>
-          <a href="
-gamezone-website-9ly4-git-main-gannaghoneem8-2998s-projects.vercel.app" target="_blank" class="proj-view-btn"><i class="fa-solid fa-play"></i> <span data-i18n="proj.viewBtn">View Project</span></a>
+          <a href="https://github.com/GannaGhoneem/Salary-Website" target="_blank" rel="noopener noreferrer" class="proj-view-btn"><i class="fa-solid fa-play"></i> <span data-i18n="proj.viewBtn">View Project</span></a>
         </div>
       </div>
       <div class="proj-card reveal d1" data-cat="mobile">
         <div class="proj-visual" style="background:linear-gradient(135deg,rgba(90,80,200,.18),rgba(0,184,240,.12))">
-          <img src="Gemini_Generated_Image_zef5ryzef5ryzef5.png" alt="Garage App Mockup">
+          <img src="Gemini_Generated_Image_zef5ryzef5ryzef5.png" alt="To-do website preview" data-i18n-alt="proj.todoAlt">
         </div>
         <div class="proj-body">
           <div class="proj-meta"><span class="proj-type" data-i18n="proj.web">Web</span><span class="proj-year">2026</span></div>
           <h3><span data-i18n="proj.p2t">To Do Website</span></h3>
           <div class="proj-cac">
-            <div class="proj-cac-item"><div class="proj-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> Challenge</div><p>Build a responsive To-Do website to help users organize daily tasks and improve productivity.</p></div>
-            <div class="proj-cac-item"><div class="proj-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> Action</div><p>Developed task management features including add/edit/delete tasks, task status tracking, local storage integration, and responsive UI design.</p></div>
-            <div class="proj-cac-item"><div class="proj-cac-label result"><i class="fa-solid fa-circle-check"></i> Result</div><p>Improved task organization and user productivity with a simple, fast, and user-friendly task management experience.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="proj.challenge">Challenge</span></div><p data-i18n="proj.todoChallenge">Build a responsive To-Do website to help users organize daily tasks and improve productivity.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="proj.action">Action</span></div><p data-i18n="proj.todoAction">Developed task management features including add/edit/delete tasks, task status tracking, local storage integration, and responsive UI design.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="proj.result">Result</span></div><p data-i18n="proj.todoResult">Improved task organization and user productivity with a simple, fast, and user-friendly task management experience.</p></div>
           </div>
           <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.75rem"><span class="svc-chip">HTML</span><span class="svc-chip">CSS</span><span class="svc-chip">JavaScript</span><span class="svc-chip">Bootstrap</span></div>
-          <a href="
-do-it-git-main-gannaghoneem8-2998s-projects.vercel.app" target="_blank" class="proj-view-btn"><i class="fa-solid fa-play"></i> <span data-i18n="proj.viewBtn">View Project</span></a>
+          <a href="https://github.com/GannaGhoneem/Do-It" target="_blank" rel="noopener noreferrer" class="proj-view-btn"><i class="fa-solid fa-play"></i> <span data-i18n="proj.viewBtn">View Project</span></a>
         </div>
       </div>
       <div class="proj-card reveal d2" data-cat="mobile">
         <div class="proj-visual" style="background:linear-gradient(135deg,rgba(245,166,35,.15),rgba(0,229,200,.12))">
-                <img src="Gemini_Generated_Image_589tpn589tpn589t.png" alt="Tennis App Mockup">
+                <img src="Gemini_Generated_Image_589tpn589tpn589t.png" alt="Gaming e-commerce website preview" data-i18n-alt="proj.gameAlt">
         </div>
         <div class="proj-body">
           <div class="proj-meta"><span class="proj-type" data-i18n="proj.web">Web</span><span class="proj-year">2026</span></div>
           <h3><span data-i18n="proj.p3t">Gaming E-commerce Website</span></h3>
           <div class="proj-cac">
-            <div class="proj-cac-item"><div class="proj-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> Challenge</div><p>Build a gaming e-commerce website with modern UI, product browsing, and smooth shopping experience for gamers.</p></div>
-            <div class="proj-cac-item"><div class="proj-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> Action</div><p>Developed responsive product pages, category filtering, shopping cart functionality, animated UI components, and integrated game/product data APIs.</p></div>
-            <div class="proj-cac-item"><div class="proj-cac-label result"><i class="fa-solid fa-circle-check"></i> Result</div><p>Created an engaging and fast user experience that improves product discovery and delivers a professional gaming store interface.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label challenge"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="proj.challenge">Challenge</span></div><p data-i18n="proj.gameChallenge">Build a gaming e-commerce website with modern UI, product browsing, and smooth shopping experience for gamers.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label action"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="proj.action">Action</span></div><p data-i18n="proj.gameAction">Developed responsive product pages, category filtering, shopping cart functionality, animated UI components, and integrated game/product data APIs.</p></div>
+            <div class="proj-cac-item"><div class="proj-cac-label result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="proj.result">Result</span></div><p data-i18n="proj.gameResult">Created an engaging and fast user experience that improves product discovery and delivers a professional gaming store interface.</p></div>
           </div>
           <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.75rem"><span class="svc-chip">CSS</span><span class="svc-chip">JavaScript</span><span class="svc-chip">Bootstrap</span><span class="svc-chip">React.js</span></div>
-          <a href="
-gamezone-website-git-main-gannaghoneem8-2998s-projects.vercel.app" target="_blank" class="proj-view-btn"><i class="fa-solid fa-play"></i> <span data-i18n="proj.viewBtn">View Project</span></a>
+          <a href="https://github.com/GannaGhoneem/Gamezone-Website" target="_blank" rel="noopener noreferrer" class="proj-view-btn"><i class="fa-solid fa-play"></i> <span data-i18n="proj.viewBtn">View Project</span></a>
         </div>
       </div>
     </div>
@@ -1007,11 +1054,11 @@ gamezone-website-git-main-gannaghoneem8-2998s-projects.vercel.app" target="_blan
           <h3 data-i18n="con.subtitle">Let's Talk</h3>
           <p data-i18n="con.desc">Have a project in mind or want to discuss the latest in tech? Feel free to reach out.</p>
         </div>
-        <a href="gannaghoneem8@gmail.com" class="contact-item-flat"><i class="fa-regular fa-envelope"></i><span>gannaghoneem8@gmail.com</span></a>
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=gannaghoneem8@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-item-flat" aria-label="Send an email to Ganna Ghoneem using Gmail" data-i18n-aria-label="a11y.gmail"><i class="fa-regular fa-envelope"></i><span>gannaghoneem8@gmail.com</span></a>
         <a href="https://wa.me/201018958739" target="_blank" class="contact-item-flat whatsapp"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a>
         <!-- رقم الهاتف كرابط اتصال -->
-        <a href="tel:+201018958739" class="contact-item-flat"><i class="fa-solid fa-phone"></i><span>+20 103 326 6058</span></a>
-        <div class="contact-item-flat"><i class="fa-solid fa-location-dot"></i><span>Cairo, Egypt</span></div>
+        <a href="tel:+201018958739" class="contact-item-flat"><i class="fa-solid fa-phone"></i><span>+20 10 18958739</span></a>
+        <div class="contact-item-flat"><i class="fa-solid fa-location-dot"></i><span data-i18n="about.loc">Cairo, Egypt</span></div>
       </div>
       <div class="form-card reveal-right d2">
         <h3 data-i18n="con.formTitle">Send a Message</h3>
@@ -1038,27 +1085,23 @@ gamezone-website-git-main-gannaghoneem8-2998s-projects.vercel.app" target="_blan
     <div style="margin-left:auto;">
       <div class="footer-section-label" data-i18n="footer.who">Who am I?</div>
       <!-- تم إضافة الكلاس who-am-i-text لضبط الاتجاه -->
-      <p class="who-am-i-text" style="font-size:.9rem;color:var(--text2);line-height:1.75;margin-left:auto;max-width:300px;" data-i18n="footer.whop">I’m a Front-End & MERN Stack Developer, passionate about creating modern, responsive, and user-friendly web applications. I focus on building scalable and efficient solutions that help turn ideas into successful digital products.</p>
+      <p class="who-am-i-text" style="font-size:.9rem;color:var(--text2);line-height:1.75;margin-left:auto;max-width:300px;" data-i18n="footer.whop">I'm Ganna, a Frontend and MERN Stack Developer passionate about building responsive, modern web applications with clean code, strong performance, and maintainable solutions.</p>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© <span id="year2"></span> <strong style="color:var(--text)" class="en-name">Ganna Ghoneem</strong><strong style="color:var(--text);display:none" class="ar-name">جنه غنيم</strong>. <span data-i18n="footer.built"></span></div>
-      <div class="footer-links-group">
+    <div class="footer-links-group">
       <!-- روابط منصات العمل الحر بأسماء المواقع بدلاً من الأيقونات -->
-      <a href="https://app.ureed.com/profile/basmala.emad.hegazy" target="_blank" class="social-btn" title="Ureed" style="font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; width:auto; padding:0 1rem;">Ureed</a>
-      <a href="https://kafiil.com/u/basmala_Emad2" target="_blank" class="social-btn" title="Kafiil" style="font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; width:auto; padding:0 1rem;">Kafiil</a>
-      <a href="https://baaeed.com/u/basmalaemad" target="_blank" class="social-btn" title="Baaeed" style="font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; width:auto; padding:0 1rem;">Baaeed</a>
-      <a href="https://nafezly.com/u/basmala_Hegazy" target="_blank" class="social-btn" title="Nafezly" style="font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; width:auto; padding:0 1rem;">Nafezly</a>
-      <a href="https://mostaql.com/u/basmala__emad/portfolio" target="_blank" class="social-btn" title="Mostaql" style="font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; width:auto; padding:0 1rem;">Mostaql</a>
+      <a href="https://khamsat.com/user/gannaghoneem" target="_blank" rel="noopener noreferrer" class="social-btn" title="Khamsat" style="font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; width:auto; padding:0 1rem;"><span>Khamsat</span></a>
+      <a href="https://kafiil.com/u/ganna_ghoneem" target="_blank" rel="noopener noreferrer" class="social-btn" title="Kafiil" style="font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; width:auto; padding:0 1rem;"><span>Kafiil</span></a>
+      <a href="https://nafezly.com/u/Ganna_Ghoneem" target="_blank" rel="noopener noreferrer" class="social-btn" title="Nafezly" style="font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; width:auto; padding:0 1rem;"><span>Nafezly</span></a>
+      <a href="https://mostaql.com/u/ganna_ghoneem" target="_blank" rel="noopener noreferrer" class="social-btn" title="Mostaql" style="font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; width:auto; padding:0 1rem;"><span>Mostaql</span></a>
     </div>
   </div>
 </footer>
 
-<button id="btt"><i class="fa-solid fa-arrow-up"></i></button>
+<button id="btt" aria-label="Back to top" data-i18n-aria-label="a11y.backToTop"><i class="fa-solid fa-arrow-up"></i></button>
 
 <script>
-document.getElementById('year2').textContent = new Date().getFullYear();
-
 /* ── CURSOR GLOW ── */
 const cg = document.getElementById('cursorGlow');
 document.addEventListener('mousemove', e => {
@@ -1078,6 +1121,10 @@ for(let i = 0; i < 20; i++) {
 /* ── TRANSLATIONS ── */
 const T = {
   en: {
+    "page.title":"Ganna Ghoneem | Frontend & MERN Stack Developer",
+    "a11y.theme":"Toggle theme","a11y.langToArabic":"Switch to Arabic","a11y.langToEnglish":"Switch to English","a11y.menu":"Open navigation menu","a11y.backToTop":"Back to top",
+    "a11y.github":"Visit Ganna Ghoneem’s GitHub profile","a11y.linkedin":"Visit Ganna Ghoneem’s LinkedIn profile","a11y.gmail":"Send an email to Ganna Ghoneem using Gmail","a11y.whatsapp":"Contact Ganna Ghoneem on WhatsApp",
+    "a11y.metaCert":"View Meta Front-End Developer certificate","a11y.cert1":"View Frontend Fundamentals certificate","a11y.cert2":"View MongoDB Course certificate","a11y.cert3":"View React.js Front-End Development certificate","a11y.cert4":"View Node.js Backend Development certificate",
     "nav.home":"Home","nav.about":"About","nav.edu":"Education","nav.skills":"Skills",
     "nav.exp":"Experience","nav.svc":"Services","nav.proj":"Projects","nav.contact":"Contact","nav.hire":"Contact Me",
     "hero.badge":"Available for Work","hero.greet":"Hello, I'm",
@@ -1088,14 +1135,45 @@ const T = {
     "about.driven":"Frontend & MERN Stack Developer",
     "about.p1":"I am Ganna, driven by a passion for web development and programming. I'm a Frontend and MERN Stack Developer specializing in building responsive and modern web applications using Frontend and MERN Stack, focusing on clean code, performance, and maintainable solutions.",
     "about.p2":"My journey involves developing full-stack web applications using React.js, Node.js, Express.js, and MongoDB, alongside building responsive designs with modern frontend technologies. I also have experience working with APIs, dynamic UI components, and collaborative development workflows using Git and GitHub.",
-    "about.loc":"Cairo, Egypt","about.avail":"Open to Work",
-    "edu.lbl":"Academic Background","edu.h":"Education & Certifications","edu.sub":"My academic journey in technology",
+    "about.loc":"Cairo, Egypt","about.avail":"Open to Work","about.educationMeta":"Damietta University · Computer Science · 2024",
+    "edu.lbl":"Academic Background","edu.h":"Education &","edu.sub":"My academic journey in technology",
     "edu.title":"Education","edu.certs":"Certifications",
     "edu.d1t":"Bachelor’s Degree in Computer Science, Faculty of Science","edu.d1i":"Damietta University · Egypt","edu.d1p":"2020 – 2024",
+    "edu.metaCertTitle":"Meta Front-End Developer",
+    "edu.metaCertDesc":"Professional Certificate covering HTML, CSS, JavaScript, React.js, responsive web design, version control, and modern front-end development practices.",
+    "edu.gradTitle":"Graduation Project: CODA E-Learning Platform","edu.gradDept":"Department: Computer Science",
+    "edu.gradDesc":"A comprehensive e-learning platform designed to help students and graduates develop their technical skills through interactive courses, quizzes, and learning resources, with a user-friendly and responsive web interface.",
+    "edu.cert1Title":"Frontend Fundamentals","edu.cert1Desc":"Front-End (HTML, CSS) · March 2026",
+    "edu.cert2Title":"MongoDB Course","edu.cert2Desc":"NoSQL Database · MongoDB CRUD Operations, Aggregation, Indexing · 2026",
+    "edu.cert3Title":"React.js Front-End Development Course","edu.cert3Desc":"React · React Hooks, Functional Components, Context API, React Router, API Integration · 2026",
+    "edu.cert4Title":"Node.js Backend Development Course","edu.cert4Desc":"MongoDB Database · APIs with Node.js & Express.js · Authentication and Authorization · Middleware Implementation · 2026",
     "sk.lbl":"What I Know","sk.h":"Technical Skills","sk.sub":"My technical toolkit across web, mobile, and cloud",
     "sk.be":"Back End","sk.fe":"Front End","sk.soft":"Soft Skills",
+    "sk.nodeDesc":"Building scalable, maintainable backend APIs and servers using Node.js and Express framework.",
+    "sk.sqlDesc":"Building optimized database schemas and complex queries for efficient data storage and retrieval.",
+    "sk.apiDesc":"Designing and implementing clean, documented RESTful APIs for web applications.",
+    "sk.phpmyadminDesc":"Managing and administering MySQL databases through phpMyAdmin, including creating tables, running SQL queries, and handling database structure and data efficiently.",
+    "sk.mongoDesc":"Schema design, aggregation pipelines, and integration with Mongoose for MERN applications.",
+    "sk.gitDesc":"Managing code versions, branching strategies, and collaboration using Git & GitHub.",
+    "sk.reactDesc":"Building dynamic, component-based UIs with hooks, context, and modern React patterns.",
+    "sk.figmaDesc":"Designing user-friendly interfaces, creating wireframes and prototypes, and building visually appealing, responsive UI/UX designs focused on usability and user experience.",
+    "sk.htmlDesc":"Semantic HTML, advanced CSS animations, Flexbox, Grid, and responsive design.",
+    "sk.jsDesc":"Modern JavaScript features, async/await, DOM manipulation, and event-driven programming.",
+    "sk.cssFrameworkDesc":"Rapid, responsive UI development using utility-first and component-based CSS frameworks.",
+    "sk.animationDesc":"Engaging micro-interactions, transitions, and keyframe animations for polished UX.",
+    "sk.problemDesc":"Analytical thinking to break down complex problems into clean, efficient solutions.",
+    "sk.teamDesc":"Collaborative approach to development with strong communication in team environments.",
+    "sk.timeDesc":"Delivering projects on schedule with proper planning and prioritization techniques.",
+    "sk.communicationDesc":"Clear articulation of technical concepts to both technical and non-technical stakeholders.",
     "about.soft1":"Problem Solving","about.soft2":"Teamwork","about.soft3":"Time Management","about.soft4":"Communication",
     "exp.lbl":"My Journey","exp.h":"Work Experience","exp.sub":"Building solutions and delivering value",
+    "exp.tech":"Tech:","exp.digiTitle":"MERN Stack Developer (Intern)","exp.digiCompany":"Digilians · Cairo, Egypt","exp.digiDate":"Jan 2026 – Present",
+    "exp.digiChallenge":"Building full-stack web applications using React.js, Node.js, Express.js, and MongoDB; delivering projects on schedule.",
+    "exp.digiAction":"Creating responsive UIs and executing RESTful APIs and CRUD operations, applying OOP principles and clean code practices.",
+    "exp.digiResult":"Reduced backend response times by 25% and delivered maintainable, scalable applications.",
+    "exp.primaTitle":"Front-End Development Diploma","exp.primaCompany":"Primalab Training and Development · Damietta","exp.primaDate":"Dec 2023 – Feb 2024","exp.primaChallenge":"Learning the complete front-end development roadmap from fundamentals to advanced concepts, including modern UI development.","exp.primaAction":"Studied HTML, CSS, JavaScript, Bootstrap, and React.js through hands-on projects and real-world UI implementations.","exp.primaResult":"Gained practical end-to-end front-end experience and built responsive, interactive web applications using modern technologies.",
+    "exp.udacityTitle":"Front-End Development Trainee","exp.udacityCompany":"Udacity · Cairo, Egypt","exp.udacityDate":"Jan 2023 – Jul 2023","exp.udacityChallenge":"Learning modern front-end practices and building responsive, user-friendly interfaces in a self-paced online environment.","exp.udacityAction":"Completed a Front-End Development program covering HTML, CSS, JavaScript, and Bootstrap through practical projects focused on responsive design, clean code, and UI development.","exp.udacityResult":"Built multiple responsive web projects and strengthened practical UI design and problem-solving skills.",
+    "exp.duTitle":"Bachelor’s Degree in Computer Science","exp.duCompany":"Faculty of Science – Damietta University","exp.duDate":"Sep 2020 – Sep 2024","exp.duChallenge":"A comprehensive academic journey covering software engineering, data structures, databases, and web development fundamentals.","exp.duAction":"Studied core computer science subjects and applied practical skills through academic projects and hands-on training in web and backend development.","exp.duResult":"Graduated with a Very Good (B+) grade and completed the CODA graduation project using full-stack development and software engineering principles.",
     "svc.lbl":"What I Offer","svc.h":"Services","svc.sub":"Comprehensive development services tailored to your needs",
     "svc.s1t":"Database Design","svc.s1p":"Efficient schemas optimized for performance and scalability.",
     "svc.s2t":"API Development","svc.s2p":"Secure and documented RESTful APIs for web & mobile apps.",
@@ -1108,6 +1186,28 @@ const T = {
     "proj.sub":"Real-world applications that showcase my skills and problem-solving approach",
     "proj.all":"All","proj.mob":"Mobile","proj.web":"Web",
     "proj.p1t":"Salary Website","proj.p2t":"To Do Website","proj.p3t":"Gaming E-commerce Website",
+    "proj.hrxTitle":"HRX – Human Resources Management System",
+    "proj.hrxMeta":"Graduation Project / Team Project · ITC 2026 Competition Finalist",
+    "proj.hrxChallenge":"Build a scalable HRMS platform that brings employee management, attendance, payroll, and leave workflows together in one responsive and maintainable system.",
+    "proj.hrxAction":"Collaborated on the HRX team project and developed the public-facing HRX Home frontend using React.js and React Router. Built the homepage, filterable services page, and about page, and created reusable Navbar, Footer, and Layout components with responsive CSS.",
+    "proj.hrxResult":"Delivered a responsive and modular web experience as part of a full-stack HRMS powered primarily by Odoo and supplemented by Node.js, Express.js, and MongoDB. The project reached the finals of the ITC 2026 Competition.",
+    "proj.hrxAlt":"Responsive HRX human resources management system displayed on laptop, tablet, and mobile devices",
+    "proj.goaltimeTitle":"Sports News Web Application",
+    "proj.goaltimeChallenge":"Bring categorized news and detailed football information together in one clear, responsive platform.",
+    "proj.goaltimeAction":"Built API-powered sports, entertainment, and world news sections with live match search, league standings, team statistics, weather, currency rates, and a currency converter.",
+    "proj.goaltimeResult":"Delivered an adaptive GOALTIME experience across desktop, tablet, and mobile devices with dedicated Matches, Standings, and Stats views.",
+    "proj.goaltimeAlt":"GOALTIME responsive sports news website displayed on laptop, tablet, and mobile",
+    "proj.challenge":"Challenge","proj.action":"Action","proj.result":"Result",
+    "proj.salaryChallenge":"Build a salary management website to calculate employee salaries, bonuses, deductions, and monthly payroll efficiently.",
+    "proj.salaryAction":"Developed a responsive website with salary calculation logic, employee management, payroll tracking, and a clean interface using modern web technologies.",
+    "proj.salaryResult":"Automated payroll calculations reduced manual errors and improved efficiency. Delivered a user-friendly and scalable salary management system.",
+    "proj.todoChallenge":"Build a responsive To-Do website to help users organize daily tasks and improve productivity.",
+    "proj.todoAction":"Developed task management features including adding, editing, and deleting tasks, status tracking, local storage integration, and responsive UI design.",
+    "proj.todoResult":"Improved task organization and user productivity with a simple, fast, and user-friendly task management experience.",
+    "proj.gameChallenge":"Build a gaming e-commerce website with a modern interface, product browsing, and a smooth shopping experience for gamers.",
+    "proj.gameAction":"Developed responsive product pages, category filtering, shopping-cart functionality, animated UI components, and integrated game and product data APIs.",
+    "proj.gameResult":"Created an engaging and fast experience that improves product discovery and delivers a professional gaming-store interface.",
+    "proj.salaryAlt":"Salary management website preview","proj.todoAlt":"To-do website preview","proj.gameAlt":"Gaming e-commerce website preview",
     "proj.viewBtn":"View Project",
     "test.lbl":"What People Say","test.h":"Client Testimonials",
     "test.sub":"Feedback from clients and collaborators","test.soon":"Coming Soon",
@@ -1119,11 +1219,52 @@ const T = {
     "con.emailPlaceholder":"your@email.com","con.msgPlaceholder":"Your Message…",
     "con.nameErr":"Please enter your name.","con.emailErr":"Please enter a valid email.",
     "con.msgErr":"Please enter a message.","con.send":"Send Message",
-    "footer.shy":"Don't be shy!","footer.who":"Who am I?","footer.built":"Built with ♥ & Code.",
+    "footer.shy":"Don't be shy!","footer.who":"Who am I?",
     "footer.shyp":"Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities.",
-    "footer.whop":"I'm a Full-Stack & Mobile Developer, passionate and dedicated to my work, building scalable applications that make your project a success.",
+    "footer.whop":"I'm Ganna, a Frontend and MERN Stack Developer passionate about building responsive, modern web applications with clean code, strong performance, and maintainable solutions.",
   },
   ar: {
+  "page.title": "Ganna Ghoneem | مطورة واجهات أمامية وMERN Stack",
+  "a11y.theme": "تبديل المظهر",
+  "a11y.langToArabic": "التبديل إلى العربية",
+  "a11y.langToEnglish": "التبديل إلى الإنجليزية",
+  "a11y.menu": "فتح قائمة التنقل",
+  "a11y.backToTop": "العودة إلى أعلى الصفحة",
+  "a11y.github": "زيارة ملف Ganna Ghoneem على GitHub",
+  "a11y.linkedin": "زيارة ملف Ganna Ghoneem على LinkedIn",
+  "a11y.gmail": "إرسال بريد إلكتروني إلى Ganna Ghoneem باستخدام Gmail",
+  "a11y.whatsapp": "التواصل مع Ganna Ghoneem عبر WhatsApp",
+  "a11y.metaCert": "عرض شهادة Meta لمطور الواجهات الأمامية",
+  "a11y.cert1": "عرض شهادة أساسيات الواجهات الأمامية",
+  "a11y.cert2": "عرض شهادة دورة MongoDB",
+  "a11y.cert3": "عرض شهادة تطوير الواجهات الأمامية باستخدام React.js",
+  "a11y.cert4": "عرض شهادة تطوير الواجهات الخلفية باستخدام Node.js",
+  "proj.hrxTitle": "HRX – نظام إدارة الموارد البشرية",
+  "proj.hrxMeta": "مشروع تخرج / مشروع جماعي · أحد المشروعات المتأهلة لنهائيات مسابقة ITC 2026",
+  "proj.hrxChallenge": "بناء منصة متجاوبة وقابلة للتوسع لإدارة الموارد البشرية، تجمع إدارة الموظفين والحضور والرواتب والإجازات داخل نظام واحد منظم وسهل الصيانة.",
+  "proj.hrxAction": "شاركت ضمن فريق مشروع HRX وطوّرت الواجهة الأمامية للموقع التعريفي HRX Home باستخدام React.js وReact Router. أنشأت الصفحة الرئيسية وصفحة الخدمات القابلة للتصفية وصفحة من نحن، بالإضافة إلى مكونات Navbar وFooter وLayout قابلة لإعادة الاستخدام، مع تطبيق تصميم متجاوب.",
+  "proj.hrxResult": "المساهمة في تقديم تجربة ويب متجاوبة ومنظمة ضمن نظام متكامل لإدارة الموارد البشرية يعتمد أساسًا على Odoo وتدعمه تقنيات Node.js وExpress.js وMongoDB. وصل المشروع إلى نهائيات مسابقة ITC لعام 2026.",
+  "proj.hrxAlt": "عرض متجاوب لنظام HRX لإدارة الموارد البشرية على اللابتوب والتابلت والموبايل",
+  "proj.goaltimeTitle": "تطبيق ويب للأخبار الرياضية",
+  "proj.goaltimeChallenge": "جمع الأخبار المصنفة ومعلومات كرة القدم التفصيلية في منصة واحدة واضحة ومتجاوبة.",
+  "proj.goaltimeAction": "طوّرت أقسامًا للأخبار الرياضية والترفيهية والعالمية بالاعتماد على واجهات API، مع البحث في المباريات المباشرة، وترتيب الدوريات، وإحصاءات الفرق، والطقس، وأسعار العملات، ومحوّل العملات.",
+  "proj.goaltimeResult": "قدّمت تجربة GOALTIME متكيفة مع أجهزة سطح المكتب والتابلت والموبايل، مع صفحات مخصصة للمباريات والترتيب والإحصاءات.",
+  "proj.goaltimeAlt": "عرض متجاوب لتطبيق GOALTIME للأخبار الرياضية على اللابتوب والتابلت والموبايل",
+  "proj.challenge": "التحدي",
+  "proj.action": "الإجراء",
+  "proj.result": "النتيجة",
+  "proj.salaryChallenge": "بناء موقع لإدارة الرواتب يحسب رواتب الموظفين والمكافآت والخصومات وكشوف الرواتب الشهرية بكفاءة.",
+  "proj.salaryAction": "طوّرت موقعاً متجاوباً يتضمن منطق حساب الرواتب وإدارة الموظفين وتتبع كشوف الرواتب وواجهة نظيفة باستخدام تقنيات ويب حديثة.",
+  "proj.salaryResult": "قلّلت أتمتة حساب الرواتب الأخطاء اليدوية وحسّنت الكفاءة، مع تقديم نظام سهل الاستخدام وقابل للتوسع.",
+  "proj.todoChallenge": "بناء موقع مهام متجاوب يساعد المستخدمين على تنظيم مهامهم اليومية وتحسين الإنتاجية.",
+  "proj.todoAction": "طوّرت ميزات لإضافة المهام وتعديلها وحذفها وتتبع حالتها، مع التكامل مع التخزين المحلي وتصميم واجهة متجاوبة.",
+  "proj.todoResult": "حسّنت تنظيم المهام وإنتاجية المستخدم من خلال تجربة إدارة مهام بسيطة وسريعة وسهلة الاستخدام.",
+  "proj.gameChallenge": "بناء متجر إلكتروني للألعاب بواجهة حديثة وتصفح واضح للمنتجات وتجربة شراء سلسة للاعبين.",
+  "proj.gameAction": "طوّرت صفحات منتجات متجاوبة وتصفية حسب الفئات وسلة تسوق ومكونات واجهة متحركة، وربطت واجهات API لبيانات الألعاب والمنتجات.",
+  "proj.gameResult": "أنشأت تجربة جذابة وسريعة تحسّن اكتشاف المنتجات وتقدم واجهة احترافية لمتجر ألعاب.",
+  "proj.salaryAlt": "معاينة موقع إدارة الرواتب",
+  "proj.todoAlt": "معاينة موقع إدارة المهام",
+  "proj.gameAlt": "معاينة متجر الألعاب الإلكتروني",
   "nav.home": "الرئيسية",
   "nav.about": "عنّي",
   "nav.edu": "التعليم",
@@ -1149,6 +1290,7 @@ const T = {
   "about.p2": "تتضمن رحلتي تطوير تطبيقات ويب كاملة باستخدام React.js وNode.js وExpress.js وMongoDB، بالإضافة إلى بناء تصاميم متجاوبة باستخدام تقنيات الواجهة الأمامية الحديثة. لدي أيضًا خبرة في العمل مع واجهات برمجة التطبيقات (APIs) ومكونات واجهة المستخدم الديناميكية وسير عمل التطوير التعاوني باستخدام Git وGitHub.",
   "about.loc": "القاهرة، مصر",
   "about.avail": "مفتوحة للعمل",
+  "about.educationMeta": "جامعة دمياط · علوم الحاسب · 2024",
   "edu.lbl": "الخلفية الأكاديمية",
   "edu.h": "التعليم و",
   "edu.sub": "رحلتي الأكاديمية في مجال التكنولوجيا",
@@ -1157,12 +1299,41 @@ const T = {
   "edu.d1t": "بكالوريوس علوم الحاسب، كلية العلوم",
   "edu.d1i": "جامعة دمياط · مصر",
   "edu.d1p": "2020 – 2024",
+  "edu.metaCertTitle": "شهادة Meta لمطور الواجهات الأمامية",
+  "edu.metaCertDesc": "شهادة احترافية تشمل HTML وCSS وJavaScript وReact.js وتصميم الويب المتجاوب وإدارة الإصدارات وممارسات تطوير الواجهات الأمامية الحديثة.",
+  "edu.gradTitle": "مشروع التخرج: منصة CODA للتعلم الإلكتروني",
+  "edu.gradDept": "القسم: علوم الحاسب",
+  "edu.gradDesc": "منصة تعلم إلكتروني شاملة تساعد الطلاب والخريجين على تطوير مهاراتهم التقنية من خلال دورات تفاعلية واختبارات وموارد تعليمية، ضمن واجهة ويب سهلة الاستخدام ومتجاوبة.",
+  "edu.cert1Title": "أساسيات الواجهات الأمامية",
+  "edu.cert1Desc": "الواجهات الأمامية (HTML وCSS) · مارس 2026",
+  "edu.cert2Title": "دورة MongoDB",
+  "edu.cert2Desc": "قواعد بيانات NoSQL · عمليات CRUD والتجميع والفهرسة في MongoDB · 2026",
+  "edu.cert3Title": "دورة تطوير الواجهات الأمامية باستخدام React.js",
+  "edu.cert3Desc": "React · React Hooks · المكونات الوظيفية · Context API · React Router · تكامل API · 2026",
+  "edu.cert4Title": "دورة تطوير الواجهات الخلفية باستخدام Node.js",
+  "edu.cert4Desc": "قاعدة بيانات MongoDB · واجهات API باستخدام Node.js وExpress.js · المصادقة والتفويض · تنفيذ Middleware · 2026",
   "sk.lbl": "ما أعرفه",
   "sk.h": "المهارات التقنية",
   "sk.sub": "مجموعة أدواتي التقنية في الويب والجوال والسحابة",
   "sk.be": "الخلفية",
   "sk.fe": "الواجهة الأمامية",
   "sk.soft": "المهارات الناعمة",
+  "sk.nodeDesc": "بناء خوادم وواجهات API خلفية قابلة للتوسع وسهلة الصيانة باستخدام Node.js وإطار Express.js.",
+  "sk.sqlDesc": "بناء مخططات قواعد بيانات محسّنة واستعلامات معقدة لتخزين البيانات واسترجاعها بكفاءة.",
+  "sk.apiDesc": "تصميم وتنفيذ واجهات RESTful API نظيفة وموثقة لتطبيقات الويب.",
+  "sk.phpmyadminDesc": "إدارة قواعد بيانات MySQL عبر phpMyAdmin، بما يشمل إنشاء الجداول وتنفيذ استعلامات SQL والتعامل بكفاءة مع بنية البيانات ومحتواها.",
+  "sk.mongoDesc": "تصميم المخططات ومسارات التجميع والتكامل مع Mongoose في تطبيقات MERN.",
+  "sk.gitDesc": "إدارة إصدارات الكود واستراتيجيات الفروع والتعاون باستخدام Git وGitHub.",
+  "sk.reactDesc": "بناء واجهات ديناميكية قائمة على المكونات باستخدام Hooks وContext وأنماط React الحديثة.",
+  "sk.figmaDesc": "تصميم واجهات سهلة الاستخدام، وإنشاء المخططات الأولية والنماذج التفاعلية، وبناء تصاميم UI/UX جذابة ومتجاوبة تركز على سهولة الاستخدام وتجربة المستخدم.",
+  "sk.htmlDesc": "استخدام HTML الدلالي وحركات CSS المتقدمة وFlexbox وGrid والتصميم المتجاوب.",
+  "sk.jsDesc": "استخدام ميزات JavaScript الحديثة وasync/await ومعالجة DOM والبرمجة المعتمدة على الأحداث.",
+  "sk.cssFrameworkDesc": "تطوير واجهات متجاوبة بسرعة باستخدام أطر CSS المعتمدة على الأدوات والمكونات.",
+  "sk.animationDesc": "إنشاء تفاعلات دقيقة وانتقالات وحركات keyframe لتجربة مستخدم مصقولة.",
+  "sk.problemDesc": "تفكير تحليلي لتقسيم المشكلات المعقدة إلى حلول نظيفة وفعالة.",
+  "sk.teamDesc": "نهج تعاوني في التطوير مع تواصل قوي داخل بيئات العمل الجماعي.",
+  "sk.timeDesc": "تسليم المشاريع في موعدها من خلال التخطيط السليم وتحديد الأولويات.",
+  "sk.communicationDesc": "شرح المفاهيم التقنية بوضوح للجمهور التقني وغير التقني.",
   "about.soft1": "حل المشكلات",
   "about.soft2": "العمل الجماعي",
   "about.soft3": "إدارة الوقت",
@@ -1170,6 +1341,31 @@ const T = {
   "exp.lbl": "مسيرتي",
   "exp.h": "الخبرة المهنية",
   "exp.sub": "بناء الحلول وتقديم القيمة",
+  "exp.tech": "التقنيات:",
+  "exp.digiTitle": "متدربة تطوير MERN Stack",
+  "exp.digiCompany": "Digilians · القاهرة، مصر",
+  "exp.digiDate": "يناير 2026 – حتى الآن",
+  "exp.digiChallenge": "بناء تطبيقات ويب متكاملة باستخدام React.js وNode.js وExpress.js وMongoDB مع الالتزام بمواعيد التسليم.",
+  "exp.digiAction": "إنشاء واجهات متجاوبة وتنفيذ RESTful APIs وعمليات CRUD مع تطبيق مبادئ OOP وممارسات الكود النظيف.",
+  "exp.digiResult": "تقليل زمن استجابة الواجهة الخلفية بنسبة 25% وتقديم تطبيقات قابلة للتوسع وسهلة الصيانة.",
+  "exp.primaTitle": "دبلومة تطوير الواجهات الأمامية",
+  "exp.primaCompany": "Primalab للتدريب والتطوير · دمياط",
+  "exp.primaDate": "ديسمبر 2023 – فبراير 2024",
+  "exp.primaChallenge": "تعلم المسار الكامل لتطوير الواجهات الأمامية من الأساسيات إلى المفاهيم المتقدمة، بما في ذلك تطوير الواجهات الحديثة.",
+  "exp.primaAction": "درست HTML وCSS وJavaScript وBootstrap وReact.js من خلال مشاريع عملية وتطبيقات واجهات واقعية.",
+  "exp.primaResult": "اكتسبت خبرة عملية متكاملة في تطوير الواجهات الأمامية وبنيت تطبيقات ويب متجاوبة وتفاعلية باستخدام تقنيات حديثة.",
+  "exp.udacityTitle": "متدربة تطوير واجهات أمامية",
+  "exp.udacityCompany": "Udacity · القاهرة، مصر",
+  "exp.udacityDate": "يناير 2023 – يوليو 2023",
+  "exp.udacityChallenge": "تعلم ممارسات تطوير الواجهات الأمامية الحديثة وبناء واجهات متجاوبة وسهلة الاستخدام ضمن بيئة تعلم ذاتي عبر الإنترنت.",
+  "exp.udacityAction": "أكملت برنامج تطوير واجهات أمامية يشمل HTML وCSS وJavaScript وBootstrap عبر مشاريع عملية تركز على التصميم المتجاوب والكود النظيف وتطوير الواجهات.",
+  "exp.udacityResult": "بنيت عدة مشاريع ويب متجاوبة وعززت مهاراتي العملية في تصميم الواجهات وحل المشكلات.",
+  "exp.duTitle": "بكالوريوس علوم الحاسب",
+  "exp.duCompany": "كلية العلوم – جامعة دمياط",
+  "exp.duDate": "سبتمبر 2020 – سبتمبر 2024",
+  "exp.duChallenge": "رحلة أكاديمية شاملة غطت هندسة البرمجيات وهياكل البيانات وقواعد البيانات وأساسيات تطوير الويب.",
+  "exp.duAction": "درست مقررات علوم الحاسب الأساسية وطبقت المهارات العملية عبر مشاريع أكاديمية وتدريب عملي في تطوير الويب والواجهات الخلفية.",
+  "exp.duResult": "تخرجت بتقدير جيد جداً (B+) وأتممت مشروع التخرج CODA بتطبيق مهارات التطوير المتكامل ومبادئ هندسة البرمجيات.",
   "svc.lbl": "ما أُقدّمه",
   "svc.h": "الخدمات",
   "svc.sub": "خدمات تطوير شاملة مصمّمة حسب احتياجاتك",
@@ -1217,9 +1413,8 @@ const T = {
   "con.send": "إرسال الرسالة",
   "footer.shy": "لا تترددي!",
   "footer.who": "من أنا؟",
-  "footer.built": "صُنع بـ ♥ وكود.",
   "footer.shyp": "تواصلي معي في أي وقت. أنا دائمًا منفتحة على مناقشة المشاريع الجديدة والأفكار الإبداعية.",
-  "footer.whop": "أنا مطوّرة Full-Stack وMobile، شغوفة ومتفانية في عملي. اكتسبت المهارات لتطوير تطبيقات قابلة للتوسع تجعل مشروعك ناجحاً."
+  "footer.whop": "أنا جنة، مطورة Frontend وMERN Stack شغوفة ببناء تطبيقات ويب حديثة ومتجاوبة، مع التركيز على الكود النظيف والأداء القوي والحلول سهلة الصيانة."
 }
 };
 
@@ -1241,8 +1436,10 @@ function setLang(l) {
   const ar = l === 'ar';
   document.documentElement.lang = l;
   document.documentElement.dir = ar ? 'rtl' : 'ltr';
+  document.title = T[l]["page.title"];
   const lt = document.getElementById('langToggle');
   if(lt) lt.textContent = ar ? 'EN' : 'AR';
+  if(lt) lt.setAttribute('aria-label', T[l][ar ? "a11y.langToEnglish" : "a11y.langToArabic"]);
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if(T[l] && T[l][key] !== undefined) el.textContent = T[l][key];
@@ -1250,6 +1447,18 @@ function setLang(l) {
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
     if(T[l] && T[l][key] !== undefined) el.placeholder = T[l][key];
+  });
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+    const key = el.getAttribute('data-i18n-alt');
+    if(T[l] && T[l][key] !== undefined) el.alt = T[l][key];
+  });
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const key = el.getAttribute('data-i18n-title');
+    if(T[l] && T[l][key] !== undefined) el.title = T[l][key];
+  });
+  document.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria-label');
+    if(T[l] && T[l][key] !== undefined) el.setAttribute('aria-label', T[l][key]);
   });
   twWords[0] = ar ? 'مطوّرة MERN Stack' : 'MERN Stack Developer';
   
