@@ -1,0 +1,49 @@
+/* Shared brand palette for Home and Pricing, in both languages. */
+:root {
+  --accent-primary: #00CFF3;
+  --accent-secondary: #8B5CF6;
+  --accent-rgb: 0, 207, 243;
+  --secondary-rgb: 139, 92, 246;
+  --accent-text: var(--accent-primary);
+  --accent-secondary-text: #A78BFA;
+  --accent-on-light: #00677C;
+  --accent-ink: #03050A;
+  --accent-gradient: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  --accent-panel: linear-gradient(135deg, #00677C 0%, #5933A8 100%);
+  --teal: var(--accent-text);
+  --teal2: var(--accent-secondary-text);
+  --teal-dim: rgba(var(--accent-rgb), .08);
+  --teal-glow: rgba(var(--accent-rgb), .22);
+  --grad: var(--accent-gradient);
+  --grad2: var(--accent-gradient);
+  --grad-purple: var(--accent-gradient);
+}
+[data-theme="light"] {
+  --accent-text: var(--accent-on-light);
+  --accent-secondary-text: #6D28D9;
+  --teal-dim: rgba(var(--accent-rgb), .10);
+  --teal-glow: rgba(var(--accent-rgb), .20);
+}
+::selection { background: var(--accent-primary); color: var(--accent-ink); }
+/* Dark ink stays readable across both ends of the exact brand gradient. */
+.nav-cta, .btn-primary, .send-btn, .card-cta.primary, .back-top,
+.pfb-icon, .cert-icon, .svc-icon, .proj-title-icon {
+  color: var(--accent-ink);
+}
+.skill-tab.active, .filter-btn.active, .toggle-btn.active, .popular-badge {
+  background: var(--accent-primary);
+  color: var(--accent-ink);
+}
+.hero-social .social-btn:hover, .hero-social .social-btn:focus-visible {
+  color: var(--accent-ink);
+}
+.cta-strip { background: var(--accent-panel); }
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid var(--accent-text);
+  outline-offset: 4px;
+}
+#btt { color: var(--accent-ink); }
+.form-group input:focus-visible, .form-group textarea:focus-visible {
+  outline: 3px solid var(--accent-text);
+  outline-offset: 4px;
+}
